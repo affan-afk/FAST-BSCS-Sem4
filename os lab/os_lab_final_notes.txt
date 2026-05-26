@@ -1,0 +1,1320 @@
+Operating Systems Lab Final Exam Notes
+=======================================
+
+Table of Contents
+-----------------
+1. Basic Linux Commands
+2. CPU Scheduling
+3. fork() Process Creation
+4. InterProcess Communication using Signals
+5. IPC: Pipes, Named Pipes, Shared Memory
+6. Signals
+7. Multithreading
+8. Semaphores / Mutexes
+9. Most Important Topics to Prioritize
+10. Common Lab Exam Patterns
+11. Time Strategy for 1 hr 45 min System Paper
+12. Last 10-minute Revision Checklist
+
+
+========================================
+1) Basic Linux Commands
+========================================
+
+1. Concept Overview
+-------------------
+- Linux commands are the basic way to interact with the OS through the shell.
+- Used to manage files, directories, permissions, search text, process data, and automate tasks.
+- Very likely in lab exams: file operations, pipes, redirection, sorting, searching, word count, permissions.
+
+2. Key Concepts & Definitions
+------------------------------
+- Shell: command interpreter between user and kernel.
+- Absolute path: starts with /
+- Relative path: based on current directory.
+- Case sensitive: file.txt and File.txt are different.
+- Pipe |: sends output of one command to input of another.
+- Redirection > >> <: send output/input to/from files.
+- Permissions: read r, write w, execute x.
+
+3. Commands / Syntax / Code
+-----------------------------
+
+File and directory commands:
+    pwd
+    ls
+    ls -l
+    ls -a
+    ls -lh
+    ls -R
+    cd /home/user
+    cd ..
+    mkdir test
+    mkdir -p a/b/c
+    touch file1.txt
+    cp file1.txt file2.txt
+    cp -r folder1 folder2
+    mv old.txt new.txt
+    rm file.txt
+    rm -r folder
+    rm -rf folder
+    cat file.txt
+    head file.txt
+    head -n 20 file.txt
+    tail file.txt
+    tail -n 15 file.txt
+    find . -name "*.c"
+    chmod 755 script.sh
+    chmod u+x script.sh
+
+Search, sort, word count, file processing:
+    grep "pattern" file.txt
+    grep -i "linux" file.txt
+    sort file.txt
+    sort -n numbers.txt
+    sort -r file.txt
+    wc file.txt
+    wc -l file.txt
+    wc -w file.txt
+    wc -c file.txt
+
+Combined usage with pipes:
+    cat file.txt | sort
+    grep "hello" file.txt | wc -l
+    cat file.txt | grep "error" | sort | uniq
+    head -n 20 data.txt | tail -n 10
+    find . -name "*.txt" | wc -l
+    ls -l | grep "^d"
+
+File conversion examples:
+    dos2unix file.txt
+    unix2dos file.txt
+    tr 'a-z' 'A-Z' < input.txt > output.txt
+
+Practical examples from lab-style usage:
+    mkdir osRevlab
+    cd osRevlab
+    touch YourFirstName.txt YourLastName.txt
+    cat YourFirstName.txt YourLastName.txt > mergedfile.txt
+    cp mergedfile.txt copiedfile.txt
+    rm YourFirstName.txt YourLastName.txt mergedfile.txt copiedfile.txt
+
+4. Step-by-Step Execution
+---------------------------
+1. Shell receives command.
+2. Shell checks command, arguments, redirection, pipes.
+3. Kernel executes corresponding system call or program.
+4. Output appears in terminal or file.
+
+Example:
+    grep "OS" notes.txt | sort | wc -l
+Flow:
+    1. grep finds matching lines.
+    2. sort orders them.
+    3. wc -l counts lines.
+
+5. Diagrams / Mental Models
+-----------------------------
+Pipe flow:
+    command1 -> | -> command2 -> | -> command3
+
+Directory tree:
+    /
+    +-- home
+        +-- user
+            +-- lab
+
+6. Important Variations / Edge Cases
+--------------------------------------
+- ls shows files; ls -a also shows hidden files.
+- sort sorts lexicographically unless -n is used.
+- grep is case-sensitive unless -i.
+- wc counts lines, words, chars depending on option.
+- chmod 755 means owner full access, others read/execute.
+
+7. Common Mistakes
+-------------------
+- Forgetting that Linux is case-sensitive.
+- Using cp instead of cp -r for directories.
+- Forgetting -n in sort for numeric values.
+- Using wc without option and then misreading output.
+- Misusing chmod numeric codes.
+- Forgetting pipes can chain commands.
+
+8. Exam Questions Practice
+----------------------------
+1. Difference between grep, sort, and wc.
+2. Write commands to count words in a file and display only lines containing "error".
+3. Explain ls -l output and permissions.
+4. What is the difference between absolute and relative path?
+5. Use pipes to list .c files and count them.
+
+9. Quick Revision Summary
+---------------------------
+- ls list, cd change directory, pwd current path
+- cp copy, mv move/rename, rm remove
+- cat, head, tail view files
+- grep search text
+- sort sort lines
+- wc count
+- find search files
+- chmod change permissions
+- | connects commands
+
+
+========================================
+2) CPU Scheduling
+========================================
+
+1. Concept Overview
+-------------------
+- CPU scheduling decides which process gets CPU next.
+- Important for performance, responsiveness, fairness, and throughput.
+- Very common in exams: Gantt chart, waiting time, turnaround time, response time.
+
+2. Key Concepts & Definitions
+------------------------------
+- Arrival Time (AT): time process enters ready queue.
+- Burst Time (BT): CPU time needed.
+- Completion Time (CT): time process finishes.
+- Turnaround Time (TAT) = CT - AT
+- Waiting Time (WT) = TAT - BT
+- Response Time (RT) = first CPU start time - arrival time
+- Throughput: number of completed processes per unit time
+
+3. Main Algorithms
+-------------------
+- FCFS
+- SJF / SPN
+- SRTF
+- Round Robin
+- Priority
+- Multilevel Queue
+
+Exam formula template:
+    TAT = CT - AT
+    WT = TAT - BT
+    RT = First Start Time - AT
+
+4. Step-by-Step Execution
+---------------------------
+FCFS:
+- Process with earliest arrival runs first.
+- Non-preemptive.
+
+SJF / SPN:
+- Shortest burst time first.
+- Non-preemptive.
+
+SRTF:
+- Preemptive version of SJF.
+- Always chooses shortest remaining time.
+
+Round Robin:
+- Each process gets a time quantum.
+- If not finished, process goes to back of queue.
+
+Priority:
+- Highest priority runs first.
+- Can be preemptive or non-preemptive.
+
+5. Diagrams / Mental Models
+-----------------------------
+Example Gantt chart:
+    0---A---3---B---9---C---13
+
+Round Robin:
+    P1 -> P2 -> P3 -> P1 -> P4 -> ...
+
+6. Important Variations / Edge Cases
+--------------------------------------
+- If arrival times are same, tie-breaking is important.
+- If two processes have same burst time, FCFS usually breaks tie.
+- RR with large quantum becomes FCFS.
+- RR with very small quantum gives more context switching.
+- Priority scheduling can cause starvation.
+- SJF can starve long jobs.
+
+7. Common Mistakes
+-------------------
+- Mixing turnaround time and waiting time.
+- Forgetting to subtract arrival time.
+- Incorrect Gantt chart ordering.
+- Not handling idle CPU time.
+- Forgetting preemption in SRTF or RR.
+- Ignoring tie-breaking rules.
+
+8. Exam Questions Practice
+----------------------------
+1. Compute WT and TAT for FCFS.
+2. Compare SJF and SRTF.
+3. Solve a Round Robin example with quantum 2 or 4.
+4. Explain priority scheduling and starvation.
+5. Define and compare preemptive vs non-preemptive scheduling.
+
+9. Quick Revision Summary
+---------------------------
+- FCFS = first arrival first served
+- SJF/SPN = shortest burst first
+- SRTF = shortest remaining time preemptive
+- RR = time quantum based
+- Priority = highest priority first
+- Formulas: TAT = CT - AT, WT = TAT - BT
+
+
+========================================
+3) fork() Process Creation
+========================================
+
+1. Concept Overview
+-------------------
+- fork() creates a new process by duplicating the current one.
+- Parent and child execute independently after fork.
+- Essential for process creation and related exam programs.
+
+2. Key Concepts & Definitions
+------------------------------
+- Process: program in execution.
+- Parent process: original process.
+- Child process: process created by fork().
+- PID: process ID.
+- PPID: parent process ID.
+- Zombie: child finished, parent hasn't waited.
+- Orphan: parent exits before child.
+
+3. Commands / Syntax / Code
+-----------------------------
+Syntax:
+    pid_t fork(void);
+
+Full working example:
+---
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+
+int main() {
+    pid_t pid = fork();
+    if (pid < 0) {
+        perror("fork failed");
+        exit(EXIT_FAILURE);
+    }
+    else if (pid == 0) {
+        printf("Child: PID=%d, PPID=%d\n", getpid(), getppid());
+        exit(0);
+    }
+    else {
+        printf("Parent: PID=%d, Child PID=%d\n", getpid(), pid);
+        wait(NULL);
+        printf("Parent after child termination\n");
+    }
+    return 0;
+}
+---
+
+Compile and run:
+    gcc fork.c -o fork
+    ./fork
+
+4. Step-by-Step Execution
+---------------------------
+1. Parent calls fork().
+2. OS creates child by duplicating process.
+3. Return values:
+   -1 -> error
+    0 -> child
+   >0 -> parent gets child PID
+4. Both processes continue from next line.
+
+5. Diagrams / Mental Models
+-----------------------------
+    Parent
+     +-- Child 1
+     +-- Child 2
+
+After fork(): same code runs in both parent and child.
+
+6. Important Variations / Edge Cases
+--------------------------------------
+- fork() duplicates address space logically; memory is separate.
+- Buffered output may print twice if not flushed before fork.
+- Child may inherit open file descriptors.
+- Parent should use wait() to avoid zombies.
+
+7. Common Mistakes
+-------------------
+- Not checking pid < 0.
+- Forgetting wait().
+- Assuming only one process continues.
+- Using exit() incorrectly after child logic.
+- Printing without understanding parent/child branch.
+
+8. Exam Questions Practice
+----------------------------
+1. What does fork() return in parent and child?
+2. Draw process tree after multiple forks.
+3. Explain zombie and orphan processes.
+4. Write a program using fork() and wait().
+5. What happens to global variables after fork?
+
+9. Quick Revision Summary
+---------------------------
+- fork() creates child process
+- 0 in child, child PID in parent
+- Use wait() in parent
+- Parent and child run independently
+- Common exam: process tree + return value
+
+
+========================================
+4) InterProcess Communication using Signals
+========================================
+
+1. Concept Overview
+-------------------
+- Signals are software interrupts used for notification/control between processes.
+- Used for interrupting, terminating, pausing, or custom handling.
+- Common exam use: handling Ctrl+C, alarm, kill, signal handlers.
+
+2. Key Concepts & Definitions
+------------------------------
+- Signal: asynchronous notification to a process.
+- Signal handler: function executed when a signal arrives.
+- Default action: kernel-defined behavior.
+- Ignore: signal is discarded.
+- Catch: custom handler handles it.
+- Signal-safe: safe to call inside handler.
+
+3. Commands / Syntax / Code
+-----------------------------
+Common commands:
+    kill -SIGINT <pid>
+    kill -9 <pid>
+    kill -15 <pid>
+
+Full working signal program:
+---
+#include <stdio.h>
+#include <stdlib.h>
+#include <signal.h>
+#include <unistd.h>
+
+void handler(int sig) {
+    printf("\nCaught signal %d\n", sig);
+    if (sig == SIGINT) {
+        printf("Ctrl+C handled safely\n");
+    }
+}
+
+int main() {
+    signal(SIGINT, handler);
+    signal(SIGTERM, handler);
+    printf("Process PID: %d\n", getpid());
+    printf("Try Ctrl+C or use kill -15 PID\n");
+    while (1) {
+        pause(); // wait for signal
+    }
+    return 0;
+}
+---
+
+Compile and run:
+    gcc signal.c -o signal
+    ./signal
+
+Send signal from another terminal:
+    kill -SIGINT <pid>
+    kill -SIGTERM <pid>
+
+4. Step-by-Step Execution
+---------------------------
+1. Process installs handler.
+2. Signal arrives.
+3. OS interrupts current execution.
+4. Handler runs.
+5. Process resumes or terminates depending on handler.
+
+5. Diagrams / Mental Models
+-----------------------------
+    Process ----signal----> kernel ----interrupt----> handler
+
+6. Important Variations / Edge Cases
+--------------------------------------
+- SIGKILL and SIGSTOP cannot be caught or ignored.
+- SIGINT usually from Ctrl+C.
+- SIGTSTP usually from Ctrl+Z.
+- pause() waits until a signal arrives.
+- Use sigaction() in serious code, signal() in simple lab code.
+
+7. Common Mistakes
+-------------------
+- Trying to catch SIGKILL.
+- Calling unsafe functions inside handler.
+- Forgetting to set handler before sending signal.
+- Confusing signal names with numbers.
+- Not testing with separate terminal.
+
+8. Exam Questions Practice
+----------------------------
+1. What is a signal?
+2. Difference between SIGINT, SIGTERM, SIGKILL.
+3. Write a signal handling program in C.
+4. What is signal-safe code?
+5. How can a process send signal to another process?
+
+9. Quick Revision Summary
+---------------------------
+- Signals = software interrupts
+- SIGINT = Ctrl+C
+- SIGKILL cannot be caught
+- Handlers customize behavior
+- Used with kill, raise, alarm
+
+
+========================================
+5) IPC: Pipes, Named Pipes, Shared Memory
+========================================
+
+1. Concept Overview
+-------------------
+- IPC allows processes to communicate and synchronize.
+- Three key methods: pipes, named pipes (FIFO), shared memory.
+- Very likely in system exam: full working C programs.
+
+2. Key Concepts & Definitions
+------------------------------
+- Pipe: one-way channel between related processes.
+- Named pipe / FIFO: pipe with a name in filesystem; unrelated processes can use it.
+- Shared memory: memory segment shared by processes.
+- Producer-consumer: common pipe/shared memory model.
+- Blocking: read waits if no data; write waits if buffer full/reader absent.
+
+3. Commands / Syntax / Code
+-----------------------------
+
+A) Anonymous Pipe:
+---
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <string.h>
+#include <sys/wait.h>
+
+int main() {
+    int fd[2];
+    pid_t pid;
+    char msg[] = "Hello from parent through pipe";
+    char buffer[100];
+
+    if (pipe(fd) == -1) {
+        perror("pipe failed");
+        exit(EXIT_FAILURE);
+    }
+    pid = fork();
+    if (pid < 0) {
+        perror("fork failed");
+        exit(EXIT_FAILURE);
+    }
+    if (pid == 0) {
+        close(fd[1]);
+        read(fd[0], buffer, sizeof(buffer));
+        printf("Child received: %s\n", buffer);
+        close(fd[0]);
+    } else {
+        close(fd[0]);
+        write(fd[1], msg, strlen(msg) + 1);
+        close(fd[1]);
+        wait(NULL);
+    }
+    return 0;
+}
+---
+
+Compile and run:
+    gcc pipe.c -o pipe
+    ./pipe
+
+---
+
+B) Named Pipe / FIFO:
+
+Writer program:
+---
+#include <stdio.h>
+#include <stdlib.h>
+#include <fcntl.h>
+#include <sys/stat.h>
+#include <unistd.h>
+#include <string.h>
+
+int main() {
+    const char *fifo = "myfifo";
+    char msg[] = "Hello through FIFO";
+    int fd;
+    mkfifo(fifo, 0666);
+    fd = open(fifo, O_WRONLY);
+    write(fd, msg, strlen(msg) + 1);
+    close(fd);
+    return 0;
+}
+---
+
+Reader program:
+---
+#include <stdio.h>
+#include <stdlib.h>
+#include <fcntl.h>
+#include <sys/stat.h>
+#include <unistd.h>
+
+int main() {
+    const char *fifo = "myfifo";
+    char buffer[100];
+    int fd;
+    fd = open(fifo, O_RDONLY);
+    read(fd, buffer, sizeof(buffer));
+    printf("Received: %s\n", buffer);
+    close(fd);
+    unlink(fifo);
+    return 0;
+}
+---
+
+Compile and run:
+    gcc fifo_writer.c -o fifo_writer
+    gcc fifo_reader.c -o fifo_reader
+    ./fifo_writer
+    ./fifo_reader
+
+---
+
+C) Shared Memory:
+
+Producer:
+---
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/ipc.h>
+#include <sys/shm.h>
+#include <string.h>
+#include <unistd.h>
+
+int main() {
+    key_t key = ftok("shmfile", 65);
+    int shmid = shmget(key, 1024, 0666 | IPC_CREAT);
+    char *str = (char*) shmat(shmid, NULL, 0);
+    printf("Enter data: ");
+    fgets(str, 1024, stdin);
+    printf("Data written to shared memory: %s\n", str);
+    shmdt(str);
+    return 0;
+}
+---
+
+Consumer:
+---
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/ipc.h>
+#include <sys/shm.h>
+#include <unistd.h>
+
+int main() {
+    key_t key = ftok("shmfile", 65);
+    int shmid = shmget(key, 1024, 0666);
+    char *str = (char*) shmat(shmid, NULL, 0);
+    printf("Data read from shared memory: %s\n", str);
+    shmdt(str);
+    shmctl(shmid, IPC_RMID, NULL);
+    return 0;
+}
+---
+
+Compile and run:
+    touch shmfile
+    gcc shmprod.c -o shmprod
+    gcc shmcons.c -o shmcons
+    ./shmprod
+    ./shmcons
+
+4. Step-by-Step Execution
+---------------------------
+Pipe:
+1. Create pipe with pipe().
+2. Fork.
+3. Parent writes to pipe, child reads.
+4. Close unused ends.
+
+FIFO:
+1. Create FIFO with mkfifo().
+2. One process opens for writing.
+3. Another opens for reading.
+4. Data flows through named pipe.
+
+Shared memory:
+1. Create key using ftok().
+2. Create memory segment using shmget().
+3. Attach using shmat().
+4. Read/write directly.
+5. Detach using shmdt().
+6. Remove using shmctl(..., IPC_RMID, ...).
+
+5. Diagrams / Mental Models
+-----------------------------
+Pipe:
+    Parent write-end ---> [ PIPE ] ---> Child read-end
+
+FIFO:
+    Process A <--> named file in filesystem <--> Process B
+
+Shared memory:
+    Process A ---> shared memory <--- Process B
+
+6. Important Variations / Edge Cases
+--------------------------------------
+- Anonymous pipes only between related processes.
+- FIFO works between unrelated processes.
+- Shared memory is fastest IPC but needs synchronization.
+- Always close unused pipe ends.
+- Read may block if no data.
+- Write may block if no reader on FIFO.
+- Shared memory can cause race conditions without semaphore/mutex.
+
+7. Common Mistakes
+-------------------
+- Not closing unused pipe ends.
+- Forgetting mkfifo() before open.
+- Forgetting shmdt() and shmctl(..., IPC_RMID, ...).
+- Using pipe between unrelated processes.
+- Forgetting synchronization for shared memory.
+
+8. Exam Questions Practice
+----------------------------
+1. Differentiate pipe, FIFO, shared memory.
+2. Why is shared memory fast?
+3. Write an anonymous pipe program.
+4. Write FIFO writer/reader programs.
+5. Explain shmget, shmat, shmdt, shmctl.
+
+9. Quick Revision Summary
+---------------------------
+- Pipe = related processes, one-way
+- FIFO = named pipe, unrelated processes allowed
+- Shared memory = fastest IPC
+- Use semaphores for shared memory synchronization
+- Close/unlink/remove resources properly
+
+
+========================================
+6) Signals
+========================================
+
+1. Concept Overview
+-------------------
+- Signals are asynchronous events used for process control.
+- In OS labs, signals often come with handler programs and signal masking/ignore ideas.
+
+2. Key Concepts & Definitions
+------------------------------
+- SIGINT: Ctrl+C
+- SIGTSTP: Ctrl+Z
+- SIGQUIT: Ctrl+\
+- SIGTERM: polite termination
+- SIGKILL: forced termination
+- SIGALRM: alarm clock signal
+
+3. Commands / Syntax / Code
+-----------------------------
+Example with alarm:
+---
+#include <stdio.h>
+#include <stdlib.h>
+#include <signal.h>
+#include <unistd.h>
+
+void alarm_handler(int sig) {
+    printf("\nAlarm signal received: %d\n", sig);
+    exit(0);
+}
+
+int main() {
+    signal(SIGALRM, alarm_handler);
+    alarm(5);
+    while (1) {
+        printf("Running...\n");
+        sleep(1);
+    }
+    return 0;
+}
+---
+
+Compile and run:
+    gcc alarm.c -o alarm
+    ./alarm
+
+4. Step-by-Step Execution
+---------------------------
+1. Register handler.
+2. Start timer with alarm().
+3. After 5 seconds, SIGALRM sent.
+4. Handler runs and exits.
+
+5. Diagrams / Mental Models
+-----------------------------
+    timer ---> SIGALRM ---> handler ---> exit
+
+6. Important Variations / Edge Cases
+--------------------------------------
+- SIGKILL / SIGSTOP cannot be handled.
+- signal() is simpler; sigaction() is more robust.
+- Handlers should be short.
+
+7. Common Mistakes
+-------------------
+- Confusing SIGINT and SIGTERM.
+- Expecting SIGKILL to be catchable.
+- Not using pause() or sleep() to observe signal.
+
+8. Exam Questions Practice
+----------------------------
+1. What is SIGALRM?
+2. Difference between SIGINT and SIGQUIT.
+3. Why can SIGKILL not be caught?
+4. Write a program handling Ctrl+C.
+5. What is alarm-based termination?
+
+9. Quick Revision Summary
+---------------------------
+- Signals = notifications
+- Default action can be terminate/ignore/stop
+- Use handlers to customize behavior
+- alarm() gives timed signal
+- kill sends signal manually
+
+
+========================================
+7) Multithreading
+========================================
+
+1. Concept Overview
+-------------------
+- Thread = lightweight process.
+- Threads share same memory space of a process.
+- Used for concurrency, responsiveness, and efficiency.
+- Common exam tasks: creating threads, joining, attributes, detached threads.
+
+2. Key Concepts & Definitions
+------------------------------
+- Thread: smallest execution unit inside a process.
+- Concurrency: multiple tasks progress together.
+- Parallelism: tasks run literally at same time on multiple cores.
+- Joinable thread: can be waited on using pthread_join().
+- Detached thread: runs independently, cannot be joined.
+- Race condition: incorrect result due to simultaneous access.
+
+3. Commands / Syntax / Code
+-----------------------------
+
+Full working thread program:
+---
+#include <stdio.h>
+#include <stdlib.h>
+#include <pthread.h>
+
+void *runner(void *param) {
+    printf("Hello from thread\n");
+    return NULL;
+}
+
+int main() {
+    pthread_t tid;
+    if (pthread_create(&tid, NULL, runner, NULL) != 0) {
+        printf("Error creating thread\n");
+        return 1;
+    }
+    pthread_join(tid, NULL);
+    printf("Thread finished\n");
+    return 0;
+}
+---
+
+Compile and run:
+    gcc thread.c -o thread -lpthread
+    ./thread
+
+---
+
+Multiple threads with ID:
+---
+#include <stdio.h>
+#include <stdlib.h>
+#include <pthread.h>
+
+void *message(void *arg) {
+    long id = (long)arg;
+    printf("Thread %ld says hello\n", id);
+    return NULL;
+}
+
+int main() {
+    pthread_t t[5];
+    for (long i = 0; i < 5; i++) {
+        pthread_create(&t[i], NULL, message, (void*)i);
+    }
+    for (int i = 0; i < 5; i++) {
+        pthread_join(t[i], NULL);
+    }
+    return 0;
+}
+---
+
+Compile and run:
+    gcc msgthreads.c -o msgthreads -lpthread
+    ./msgthreads
+
+---
+
+Detached thread example:
+---
+#include <stdio.h>
+#include <stdlib.h>
+#include <pthread.h>
+#include <unistd.h>
+
+void *infoThread(void *arg) {
+    printf("Detached thread running\n");
+    return NULL;
+}
+
+int main() {
+    pthread_t tid;
+    pthread_attr_t attr;
+    pthread_attr_init(&attr);
+    pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_DETACHED);
+    pthread_create(&tid, &attr, infoThread, NULL);
+    pthread_attr_destroy(&attr);
+    sleep(1);
+    printf("Main exits\n");
+    return 0;
+}
+---
+
+Compile and run:
+    gcc detachthread.c -o detachthread -lpthread
+    ./detachthread
+
+4. Step-by-Step Execution
+---------------------------
+1. Main thread starts.
+2. pthread_create() creates new thread.
+3. New thread runs specified function.
+4. pthread_join() waits for completion if joinable.
+5. Detached thread cleans up automatically.
+
+5. Diagrams / Mental Models
+-----------------------------
+    Process
+     +-- main thread
+     +-- thread 1
+     +-- thread 2
+
+6. Important Variations / Edge Cases
+--------------------------------------
+- Threads share heap/global memory.
+- Threads need synchronization if accessing shared data.
+- Detached threads cannot be joined.
+- pthread_join() is for joinable threads only.
+- Passing arguments often needs casting or a struct.
+
+7. Common Mistakes
+-------------------
+- Not linking with -lpthread.
+- Forgetting pthread_join() and program ends early.
+- Passing wrong argument types.
+- Using shared data without mutex/semaphore.
+- Confusing process with thread.
+
+8. Exam Questions Practice
+----------------------------
+1. What is a thread?
+2. Difference between process and thread.
+3. Write a multithreaded program in C.
+4. What is a detached thread?
+5. Explain pthread_create() and pthread_join().
+
+9. Quick Revision Summary
+---------------------------
+- Threads share memory of same process
+- pthread_create() creates thread
+- pthread_join() waits for thread
+- Detached thread cannot be joined
+- Synchronization required for shared data
+
+
+========================================
+8) Semaphores / Mutexes
+========================================
+
+1. Concept Overview
+-------------------
+- Mutex: one thread at a time in critical section.
+- Semaphore: counter-based synchronization primitive.
+- Used to solve producer-consumer, reader-writer, and other synchronization problems.
+
+2. Key Concepts & Definitions
+------------------------------
+- Critical section: code accessing shared data.
+- Mutex: mutual exclusion lock.
+- Binary semaphore: semaphore with value 0 or 1.
+- Counting semaphore: semaphore with integer count.
+- Wait / P operation: decrement or block.
+- Post / V operation: increment and wake one waiting thread.
+- Race condition: bad shared access result.
+
+3. Commands / Syntax / Code
+-----------------------------
+
+A) Producer-Consumer using semaphores:
+---
+#include <stdio.h>
+#include <stdlib.h>
+#include <pthread.h>
+#include <semaphore.h>
+#include <unistd.h>
+
+#define BUFFER_SIZE 5
+sem_t mutex, empty, full;
+int buffer[BUFFER_SIZE];
+int in = 0, out = 0;
+
+void *producer(void *arg) {
+    int item;
+    while (1) {
+        item = rand() % 100;
+        sem_wait(&empty);
+        sem_wait(&mutex);
+        buffer[in] = item;
+        printf("Produced: %d\n", item);
+        in = (in + 1) % BUFFER_SIZE;
+        sem_post(&mutex);
+        sem_post(&full);
+        sleep(rand() % 3);
+    }
+    return NULL;
+}
+
+void *consumer(void *arg) {
+    int item;
+    while (1) {
+        sem_wait(&full);
+        sem_wait(&mutex);
+        item = buffer[out];
+        printf("Consumed: %d\n", item);
+        out = (out + 1) % BUFFER_SIZE;
+        sem_post(&mutex);
+        sem_post(&empty);
+        sleep(rand() % 3);
+    }
+    return NULL;
+}
+
+int main() {
+    pthread_t producer_thread, consumer_thread;
+    sem_init(&mutex, 0, 1);
+    sem_init(&empty, 0, BUFFER_SIZE);
+    sem_init(&full, 0, 0);
+    pthread_create(&producer_thread, NULL, producer, NULL);
+    pthread_create(&consumer_thread, NULL, consumer, NULL);
+    pthread_join(producer_thread, NULL);
+    pthread_join(consumer_thread, NULL);
+    sem_destroy(&mutex);
+    sem_destroy(&empty);
+    sem_destroy(&full);
+    return 0;
+}
+---
+
+Compile and run:
+    gcc bounded_buffer.c -o bounded_buffer -pthread
+    ./bounded_buffer
+
+---
+
+B) Reader-Writer using semaphores:
+---
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <semaphore.h>
+#include <pthread.h>
+#include <unistd.h>
+
+#define NUM_READERS 5
+#define NUM_WRITERS 2
+#define STRING_LENGTH 60
+
+pthread_t readers[NUM_READERS], writers[NUM_WRITERS];
+sem_t mutex, rw_mutex;
+int readers_count = 0;
+FILE *file;
+
+char generateRandomChar() {
+    return (char)('a' + rand() % 26);
+}
+
+void *reader(void *arg) {
+    while (1) {
+        sem_wait(&mutex);
+        readers_count++;
+        if (readers_count == 1) sem_wait(&rw_mutex);
+        sem_post(&mutex);
+
+        fseek(file, 0, SEEK_SET);
+        char buffer[256];
+        while (fgets(buffer, sizeof(buffer), file) != NULL) {
+            fprintf(stdout, "Reader %ld: %s", (long)arg, buffer);
+        }
+
+        sem_wait(&mutex);
+        readers_count--;
+        if (readers_count == 0) sem_post(&rw_mutex);
+        sem_post(&mutex);
+        usleep(1000);
+    }
+    return NULL;
+}
+
+void *writer(void *arg) {
+    while (1) {
+        sem_wait(&rw_mutex);
+        srand(time(NULL));
+        char randomString[STRING_LENGTH + 1];
+        for (int i = 0; i < STRING_LENGTH; i++) {
+            randomString[i] = generateRandomChar();
+        }
+        randomString[STRING_LENGTH] = '\0';
+        fseek(file, 0, SEEK_END);
+        fprintf(file, "%s\n", randomString);
+        fprintf(stdout, "Writer %ld: %s\n", (long)arg, randomString);
+        fflush(file);
+        sem_post(&rw_mutex);
+        usleep(1000);
+    }
+    return NULL;
+}
+
+int main() {
+    file = fopen("shared_file.txt", "a+");
+    if (file == NULL) { perror("Error opening file"); exit(EXIT_FAILURE); }
+    sem_init(&mutex, 0, 1);
+    sem_init(&rw_mutex, 0, 1);
+    for (int i = 0; i < NUM_WRITERS; i++)
+        pthread_create(&writers[i], NULL, writer, (void *)(long)i);
+    for (int i = 0; i < NUM_READERS; i++)
+        pthread_create(&readers[i], NULL, reader, (void *)(long)i);
+    for (int i = 0; i < NUM_READERS; i++) pthread_join(readers[i], NULL);
+    for (int i = 0; i < NUM_WRITERS; i++) pthread_join(writers[i], NULL);
+    sem_destroy(&mutex);
+    sem_destroy(&rw_mutex);
+    fclose(file);
+    return 0;
+}
+---
+
+Compile and run:
+    gcc reader_writer.c -o reader_writer -pthread
+    ./reader_writer
+
+---
+
+C) Mutex example:
+---
+#include <stdio.h>
+#include <stdlib.h>
+#include <pthread.h>
+
+pthread_mutex_t lock;
+int counter = 0;
+
+void *worker(void *arg) {
+    for (int i = 0; i < 100000; i++) {
+        pthread_mutex_lock(&lock);
+        counter++;
+        pthread_mutex_unlock(&lock);
+    }
+    return NULL;
+}
+
+int main() {
+    pthread_t t1, t2;
+    pthread_mutex_init(&lock, NULL);
+    pthread_create(&t1, NULL, worker, NULL);
+    pthread_create(&t2, NULL, worker, NULL);
+    pthread_join(t1, NULL);
+    pthread_join(t2, NULL);
+    pthread_mutex_destroy(&lock);
+    printf("Counter = %d\n", counter);
+    return 0;
+}
+---
+
+Compile and run:
+    gcc mutex.c -o mutex -lpthread
+    ./mutex
+
+4. Step-by-Step Execution
+---------------------------
+Semaphore:
+- sem_wait() decreases value or blocks.
+- sem_post() increases value and wakes waiting thread.
+- sem_init() creates semaphore.
+
+Mutex:
+- pthread_mutex_lock() enters critical section.
+- pthread_mutex_unlock() leaves critical section.
+
+5. Diagrams / Mental Models
+-----------------------------
+Producer-consumer:
+    Producer -> buffer -> Consumer
+    (empty count, full count, mutex protect buffer)
+
+Reader-writer:
+    Readers can enter together.
+    Writer needs exclusive access.
+
+6. Important Variations / Edge Cases
+--------------------------------------
+- sem_init(&sem, 0, value) for thread-shared semaphore.
+- sem_init(&sem, 1, value) for process-shared semaphore.
+- Mutex should protect critical section only.
+- Deadlock may happen if locks are acquired in wrong order.
+- Reader-writer solutions often favor readers or writers depending on design.
+
+7. Common Mistakes
+-------------------
+- Not including -pthread.
+- Confusing mutex and semaphore.
+- Not initializing semaphore.
+- Forgetting sem_destroy() / pthread_mutex_destroy().
+- Not protecting shared variables.
+- Using sem_wait() / sem_post() in wrong order.
+
+8. Exam Questions Practice
+----------------------------
+1. Difference between mutex and semaphore.
+2. Write producer-consumer using semaphores.
+3. Explain reader-writer synchronization.
+4. What is a critical section?
+5. What happens if semaphores are not initialized?
+
+9. Quick Revision Summary
+---------------------------
+- Mutex = one at a time lock
+- Semaphore = counter-based synchronization
+- sem_wait() blocks/decrements
+- sem_post() increments/unblocks
+- Common lab programs: producer-consumer, reader-writer, mutex counter
+
+
+========================================
+9) Most Important Topics to Prioritize
+========================================
+
+If short on time, prioritize these:
+1. fork() return values and process tree
+2. Pipe / FIFO / Shared memory differences
+3. Signal handling with signal() / alarm() / kill
+4. Thread creation and joining
+5. Semaphore and mutex usage
+6. CPU scheduling formulas and Gantt chart
+7. Linux commands with pipes, grep, sort, wc, chmod, find
+
+
+========================================
+10) Common Lab Exam Patterns
+========================================
+
+- Write a Linux command sequence for a file task
+- Compute scheduling WT/TAT from a table
+- Write a fork() program with parent/child output
+- Write pipe or FIFO communication program
+- Write signal handler program
+- Write multithreaded program using pthreads
+- Write semaphore/mutex synchronization program
+- Explain differences:
+    - pipe vs FIFO vs shared memory
+    - process vs thread
+    - semaphore vs mutex
+    - preemptive vs non-preemptive scheduling
+
+
+========================================
+11) Time Strategy for 1 hr 45 min System Paper
+========================================
+
+First 10 minutes:
+- Read all questions quickly.
+- Mark coding questions first.
+- Identify easy theory questions.
+
+Next 35-40 minutes:
+- Solve CPU scheduling carefully.
+- Do formulas cleanly.
+- Draw Gantt charts neatly.
+
+Next 35-40 minutes:
+- Write system programs:
+    - fork
+    - pipe/FIFO
+    - signals
+    - threads
+    - semaphores/mutex
+
+Last 10-15 minutes:
+- Check compile commands.
+- Check headers.
+- Check missing return 0;
+- Check wait() / pthread_join() / sem_destroy() / close() / shmdt().
+
+
+========================================
+12) Last 10-minute Revision Checklist
+========================================
+
+fork():
+- parent gets child PID
+- child gets 0
+
+CPU scheduling:
+- TAT = CT - AT
+- WT = TAT - BT
+
+Pipe:
+- related processes only
+- one-way
+
+FIFO:
+- named pipe
+- unrelated processes allowed
+
+Shared memory:
+- fastest IPC
+- needs synchronization
+
+Signals:
+- SIGINT, SIGTERM, SIGKILL, SIGALRM
+
+Threads:
+- pthread_create, pthread_join
+
+Semaphores:
+- sem_wait, sem_post, sem_init
+
+Mutex:
+- lock/unlock
+
+Linux:
+- ls, cd, cp, mv, rm, grep, sort, wc, find, chmod

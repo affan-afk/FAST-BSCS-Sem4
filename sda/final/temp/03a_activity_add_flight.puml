@@ -1,0 +1,113 @@
+@startuml IntelliFly_Activity_AddFlight
+
+skinparam backgroundColor #FAFCFF
+skinparam activity {
+  BackgroundColor #EBF2FA
+  BorderColor #1F6AA5
+  FontColor #1A1A2E
+  FontSize 12
+  DiamondBackgroundColor #FFF3CD
+  DiamondBorderColor #CC8800
+  DiamondFontColor #1A1A2E
+  StartColor #2E4057
+  EndColor   #2E4057
+  BarColor    #1F6AA5
+}
+skinparam ArrowColor #1F6AA5
+skinparam ArrowFontColor #2E4057
+skinparam ArrowFontSize 11
+skinparam swimlane {
+  BorderColor #2E4057
+  TitleFontColor #FFFFFF
+  TitleBackgroundColor #2E4057
+}
+
+|#D4EDDA| Airport Operator |
+|#D1ECF1| CLI |
+|#EBF2FA| FlightManager |
+|#FFF3CD| Data Structures |
+
+|Airport Operator|
+start
+:Select **Option 1 — Add Flight**\nfrom main menu;
+
+|CLI|
+:Display Add Flight form;
+:Read **flightNo** (string);
+
+if (flightNo empty?) then (yes)
+  #FF6B6B:Print "Invalid flight number!";
+  stop
+else (no)
+endif
+
+:Read **origin** (IATA code → uppercase);
+:Read **destination** (IATA code → uppercase);
+:Read **departure time** (HH:MM);
+
+if (Valid HH:MM format?) then (no)
+  #FF6B6B:Print "Invalid time format!";
+  stop
+else (yes)
+endif
+
+:Read **arrival time** (HH:MM);
+
+if (Valid HH:MM format?) then (no)
+  #FF6B6B:Print "Invalid time format!";
+  stop
+else (yes)
+endif
+
+:Read **priority** (1/2/3);
+
+if (1 ≤ priority ≤ 3?) then (no)
+  #FF6B6B:Print "Invalid priority!";
+  stop
+else (yes)
+endif
+
+:Read **description** (optional);
+:Construct **Flight** object\n(flightNo, origin, dest, dep, arr, priority, desc);
+
+|FlightManager|
+:Call **flightIndex.find(flightNo)**;
+
+|Data Structures|
+:ChainedHashTable search;
+
+|FlightManager|
+if (Flight already exists?) then (yes)
+  |CLI|
+  #FF6B6B:Print "[ERROR] Flight already exists!";
+  stop
+else (no)
+endif
+
+fork
+  |Data Structures|
+  :flights.push_back(f)\n(append to main vector);
+fork again
+  :ChainedHashTable.insert(flightNo → idx);
+fork again
+  :OpenAddressingHash.insert(flightNo → idx);
+fork again
+  :Trie.insert(origin)\nTrie.insert(dest);
+fork again
+  :AVL.insert(departure → flightNo)\n(schedule tree);
+fork again
+  :BTree.insert(flightNo → idx);
+fork again
+  :IndexedMinHeap.push(HeapItem{no,priority,dep});
+  :lazyPQ.push(HeapItem{no,priority,dep});
+end fork
+
+|FlightManager|
+:undoStack.push("ADD " + flightNo);
+:return **true**;
+
+|CLI|
+#90EE90:Print "[SUCCESS] Flight added!";
+stop
+
+@enduml

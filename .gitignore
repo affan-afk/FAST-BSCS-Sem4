@@ -1,0 +1,30 @@
+# IDE / OS
+.vs/
+.idea/
+*.log
+
+# Python
+__pycache__/
+*.pyc
+venv/
+.env
+
+# Jupyter Notebook junk
+.ipynb_checkpoints/
+
+# Large files (VERY IMPORTANT)
+*.csv
+*.zip
+*.pkl
+*.h5
+*.bak
+
+# Build outputs
+build/
+dist/
+
+# OS files
+Thumbs.db
+.DS_Store
+
+db/

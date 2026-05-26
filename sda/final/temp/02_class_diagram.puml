@@ -1,0 +1,263 @@
+@startuml IntelliFly_ClassDiagram
+
+skinparam backgroundColor #FAFCFF
+skinparam class {
+  BackgroundColor #EBF2FA
+  BorderColor #1F6AA5
+  FontColor #1A1A2E
+  HeaderBackgroundColor #2E4057
+  HeaderFontColor White
+  HeaderFontSize 13
+  HeaderFontStyle bold
+  AttributeFontSize 11
+  AttributeFontColor #1A1A2E
+  StereotypeFontColor #1F6AA5
+}
+skinparam stereotypeCBackgroundColor #D4EDDA
+skinparam stereotypeEBackgroundColor #FFF3CD
+skinparam stereotypeIBackgroundColor #D1ECF1
+skinparam ArrowColor #1F6AA5
+skinparam ArrowFontColor #2E4057
+skinparam ArrowFontSize 11
+skinparam packageBackgroundColor #F5F8FC
+skinparam packageBorderColor #1F6AA5
+
+' ═══════════════════════════════════════════════════════════════
+'  BOUNDARY
+' ═══════════════════════════════════════════════════════════════
+package "Boundary" <<Rectangle>> {
+
+  class CLI <<Boundary>> {
+    - fm : FlightManager
+    --
+    + run() : void
+    - printHeader() : void
+    - printMenu() : void
+    - addFlightMenu() : void
+    - cancelFlightMenu() : void
+    - viewFlightMenu() : void
+    - listAllFlightsMenu() : void
+    - listByDepartureMenu() : void
+    - listByPriorityMenu() : void
+    - runwayMenu() : void
+    - routePlanningMenu() : void
+    - searchMenu() : void
+    - autocompleteMenu() : void
+    - demoScenario() : void
+    - loadSampleData() : void
+  }
+
+}
+
+' ═══════════════════════════════════════════════════════════════
+'  CONTROL
+' ═══════════════════════════════════════════════════════════════
+package "Control" <<Rectangle>> {
+
+  class FlightManager <<Control>> {
+    - flights         : vector<Flight>
+    - flightIndex     : ChainedHashTable<string,int>
+    - flightIndexOA   : OpenAddressingHash<string,int>
+    - airportTrie     : Trie
+    - routeGraph      : Graph
+    - scheduleAVL     : AVL<long long, string>
+    - btreeIndex      : BTree<string, int>
+    - indexedHeap     : IndexedMinHeap<HeapItem, string>
+    - lazyPQ          : priority_queue<HeapItem>
+    - runways         : vector<Runway>
+    - undoStack       : stack<string>
+    --
+    + addFlight(f : Flight) : bool
+    + cancelFlight(no : string) : bool
+    + getFlight(no : string) : optional<Flight>
+    + getAllFlights() : vector<Flight>
+    + scheduleNext() : optional<Flight>
+    + allocateRunway(no : string) : optional<int>
+    + freeRunway(id : int) : bool
+    + addRoute(a : string, b : string, w : int) : void
+    + shortestFrom(src : string) : vector<pair<string,int>>
+    + getMSTbyKruskal() : vector<Edge>
+    + getMSTbyPrim(start : string) : vector<Edge>
+    + topoOrder() : vector<string>
+    + autocompleteAirport(pref : string, limit : int) : vector<string>
+    + getFlightsSortedByDeparture() : vector<Flight>
+    + getFlightsByPriority() : vector<Flight>
+    + listFlightsSortedByDeparture(stable : bool) : vector<pair<string,string>>
+    + searchInLogs(pattern : string, method : string) : vector<int>
+    + getRunwayStatus() : vector<Runway>
+    + printAllFlights() : void
+    + undo() : bool
+  }
+
+}
+
+' ═══════════════════════════════════════════════════════════════
+'  ENTITY — Models
+' ═══════════════════════════════════════════════════════════════
+package "Entity — Models" <<Rectangle>> {
+
+  class Flight <<Entity>> {
+    + flightNo    : string
+    + origin      : string
+    + dest        : string
+    + departure   : long long
+    + arrival     : long long
+    + priority    : int
+    + valid       : bool
+    + description : string
+    --
+    + Flight()
+    + Flight(f, o, d, dep, arr, p, desc)
+  }
+
+  class Runway <<Entity>> {
+    + id   : int
+    + free : bool
+    --
+    + Runway(id : int)
+  }
+
+  class Edge <<Entity>> {
+    + u : string
+    + v : string
+    + w : int
+    --
+    + Edge()
+    + Edge(a, b, c)
+  }
+
+}
+
+' ═══════════════════════════════════════════════════════════════
+'  ENTITY — Data Structures
+' ═══════════════════════════════════════════════════════════════
+package "Entity — Data Structures" <<Rectangle>> {
+
+  class "AVL<Key, Val>" as AVL <<Entity>> {
+    - root : Node*
+    --
+    + insert(k : Key, v : Val) : void
+    + remove(k : Key) : void
+    + search(k : Key) : Val*
+    + inorder() : vector<pair<Key,Val>>
+  }
+
+  class "BTree<Key, Val>" as BTree <<Entity>> {
+    - root : Node*
+    - t    : int
+    --
+    + insert(k : Key, v : Val) : void
+    + search(k : Key) : Val*
+  }
+
+  class "IndexedMinHeap<T, Key>" as Heap <<Entity>> {
+    - heap     : vector<T>
+    - indexMap : unordered_map<Key, int>
+    - keyOf    : function<Key(T)>
+    - lessThan : function<bool(T,T)>
+    --
+    + push(val : T) : void
+    + top() : T
+    + pop() : void
+    + contains(k : Key) : bool
+    + decreaseKey(k : Key, newVal : T) : void
+    + empty() : bool
+    + size() : int
+  }
+
+  class "ChainedHashTable<K, V>" as CHT <<Entity>> {
+    - buckets : vector<list<pair<K,V>>>
+    - n       : size_t
+    - maxLoad : double
+    --
+    + insert(k : K, v : V) : void
+    + remove(k : K) : bool
+    + find(k : K) : V*
+    - rehash() : void
+  }
+
+  class "OpenAddressingHash<K, V>" as OAH <<Entity>> {
+    - table   : vector<Slot>
+    - n       : size_t
+    - maxLoad : double
+    --
+    + insert(k : K, v : V) : void
+    + remove(k : K) : bool
+    + find(k : K) : V*
+    - rehash() : void
+  }
+
+  class Trie <<Entity>> {
+    - root : Node*
+    --
+    + insert(s : string) : void
+    + autocomplete(pref : string, limit : int) : vector<string>
+    - collect(node, acc, out, limit) : void
+  }
+
+  class Graph <<Entity>> {
+    - adj       : unordered_map<string, vector<pair<string,int>>>
+    - edgesList : vector<Edge>
+    --
+    + addEdge(u, v : string, w : int) : void
+    + bfs(src : string) : vector<string>
+    + dfs(src : string) : vector<string>
+    + dijkstra(src : string) : unordered_map<string,int>
+    + primMST(start : string) : vector<Edge>
+    + kruskalMST() : vector<Edge>
+    + topoSort() : vector<string>
+    + vertices() : vector<string>
+  }
+
+}
+
+' ═══════════════════════════════════════════════════════════════
+'  ENTITY — Algorithm Namespaces
+' ═══════════════════════════════════════════════════════════════
+package "Entity — Algorithms" <<Rectangle>> {
+
+  class "sorting" as Sort <<utility>> {
+    {static} + mergeSort<T>(a : vector<T>, comp) : void
+    {static} + quickSort<T>(a : vector<T>, comp) : void
+    - mergeSortRec<T>(...) : void
+    - quickSortRec<T>(...) : void
+    - partition<T>(...) : int
+  }
+
+  class "strsearch" as Str <<utility>> {
+    {static} + brute(t, p : string) : vector<int>
+    {static} + kmp(t, p : string) : vector<int>
+    {static} + rabinKarp(t, p : string) : vector<int>
+    {static} + boyerMoore(t, p : string) : vector<int>
+  }
+
+}
+
+' ═══════════════════════════════════════════════════════════════
+'  RELATIONSHIPS
+' ═══════════════════════════════════════════════════════════════
+
+' CLI → FlightManager (composition: CLI owns FM)
+CLI *-- FlightManager : "- fm\n(composition)"
+
+' FlightManager → entity compositions
+FlightManager *-- AVL         : "- scheduleAVL"
+FlightManager *-- BTree       : "- btreeIndex"
+FlightManager *-- Heap        : "- indexedHeap"
+FlightManager *-- CHT         : "- flightIndex"
+FlightManager *-- OAH         : "- flightIndexOA"
+FlightManager *-- Trie        : "- airportTrie"
+FlightManager *-- Graph       : "- routeGraph"
+
+' FlightManager aggregates Flight / Runway
+FlightManager o-- Flight  : "- flights\nvector<>"
+FlightManager o-- Runway  : "- runways\nvector<>"
+
+' Graph contains edges
+Graph *-- Edge : "- edgesList"
+
+' FlightManager uses algorithm namespaces
+FlightManager ..> Sort : "<<use>>"
+FlightManager ..> Str  : "<<use>>"
+
+@enduml

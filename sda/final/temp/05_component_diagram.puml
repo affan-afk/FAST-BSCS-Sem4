@@ -1,0 +1,139 @@
+@startuml IntelliFly_ComponentDiagram
+
+skinparam backgroundColor #FAFCFF
+skinparam component {
+  BackgroundColor #EBF2FA
+  BorderColor #1F6AA5
+  FontColor #1A1A2E
+  FontSize 12
+  FontStyle bold
+  ArrowColor #1F6AA5
+}
+skinparam interface {
+  BackgroundColor #2E4057
+  BorderColor #1F6AA5
+  FontColor White
+}
+skinparam package {
+  BackgroundColor #F5F8FC
+  BorderColor #2E4057
+  FontColor #2E4057
+  FontStyle bold
+}
+skinparam note {
+  BackgroundColor #FFFBE6
+  BorderColor #CCAA00
+  FontSize 11
+}
+skinparam ArrowFontColor #2E4057
+skinparam ArrowFontSize 11
+
+' ═══════════════════════════════════════════════════════════════
+'  Top-level system boundary
+' ═══════════════════════════════════════════════════════════════
+
+package "IntelliFly Application" {
+
+  ' ── Boundary Layer ──────────────────────────────────────
+  package "Boundary Layer" {
+    [CLI\nInteractive Menu Interface] as CLI
+  }
+
+  ' ── Control Layer ───────────────────────────────────────
+  package "Control Layer" {
+    [FlightManager\nBusiness Logic Coordinator] as FM
+  }
+
+  ' ── Primary Index Structures ────────────────────────────
+  package "Hash Index Structures" {
+    [ChainedHashTable<string,int>\nPrimary Flight Index\n(Separate Chaining)] as CHT
+    [OpenAddressingHash<string,int>\nSecondary Flight Index\n(Linear Probing)] as OAH
+  }
+
+  ' ── Tree Index Structures ───────────────────────────────
+  package "Tree Index Structures" {
+    [AVL<long long, string>\nDeparture Schedule Index\n(Self-Balancing BST)] as AVL
+    [BTree<string, int>\nFlight Lookup Index\n(B-Tree Order 2)] as BT
+  }
+
+  ' ── Priority Scheduling ─────────────────────────────────
+  package "Priority Scheduling" {
+    [IndexedMinHeap<HeapItem, string>\nPriority + Time Scheduler\n(decrease-key support)] as HEAP
+    [priority_queue<HeapItem>\nLazy Deletion Queue\n(std::priority_queue)] as LPQ
+  }
+
+  ' ── Graph & Route Engine ────────────────────────────────
+  package "Route & Graph Engine" {
+    [Graph\nAirport Route Graph\n(Adjacency List)] as GRAPH
+    note right of GRAPH
+      Algorithms:
+      • BFS / DFS traversal
+      • Dijkstra (shortest path)
+      • Kruskal (MST, Union-Find)
+      • Prim (MST, min-PQ)
+      • Topological Sort
+    end note
+  }
+
+  ' ── Prefix Search ───────────────────────────────────────
+  package "Prefix Search" {
+    [Trie\nAirport Autocomplete\n(Prefix Tree)] as TRIE
+  }
+
+  ' ── Sorting Algorithms ──────────────────────────────────
+  package "Sorting Algorithms" {
+    [namespace sorting\nMerge Sort (stable)\nQuick Sort (median-of-3)] as SORT
+  }
+
+  ' ── String Search Algorithms ────────────────────────────
+  package "String Search Algorithms" {
+    [namespace strsearch\nBrute Force | KMP\nRabin-Karp | Boyer-Moore] as STRS
+  }
+
+  ' ── Shared Utilities ────────────────────────────────────
+  package "Utilities (Global)" {
+    [parseTimeHM() / fmtHM()\nfmtArrival() / trim()\nreadLinePrompt() / readIntPrompt()] as UTIL
+  }
+
+  ' ── Data Models ─────────────────────────────────────────
+  package "Data Models" {
+    [Flight\n(flightNo, origin, dest,\ndep, arr, priority, valid)] as F
+    [Runway\n(id, free)] as R
+    [Edge\n(u, v, w)] as E
+    [undoStack\nstack<string>] as US
+    [runways\nvector<Runway>] as RV
+  }
+}
+
+' ═══════════════════════════════════════════════════════════════
+'  Interfaces / Ports
+' ═══════════════════════════════════════════════════════════════
+() "stdin/stdout\n(Terminal)" as TERM
+
+' ═══════════════════════════════════════════════════════════════
+'  Dependency Arrows
+' ═══════════════════════════════════════════════════════════════
+
+TERM <--> CLI : "user I/O"
+CLI --> FM     : "delegates all\nbusiness operations"
+
+FM --> CHT     : "primary O(1)\nflight lookup"
+FM --> OAH     : "secondary O(1)\nflight lookup"
+FM --> AVL     : "ordered schedule\nby departure time"
+FM --> BT      : "B-Tree secondary\nflight index"
+FM --> HEAP    : "priority scheduling\n& decrease-key"
+FM --> LPQ     : "lazy-delete\nscheduling queue"
+FM --> GRAPH   : "route queries\n& graph algorithms"
+FM --> TRIE    : "airport prefix\nautocomplete"
+FM --> SORT    : "sort flights\n(mergeSort / quickSort)"
+FM --> STRS    : "search flight\ndescription logs"
+FM --> US      : "undo history"
+FM --> RV      : "runway allocation"
+FM ..> F       : "creates & stores"
+FM ..> R       : "manages"
+GRAPH ..> E    : "stores in edgesList"
+
+CLI ..> UTIL   : "uses for I/O\n& time formatting"
+FM  ..> UTIL   : "uses for\ntime formatting"
+
+@enduml

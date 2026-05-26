@@ -1,0 +1,98 @@
+@startuml IntelliFly_Activity_RunwayManagement
+
+skinparam backgroundColor #FAFCFF
+skinparam activity {
+  BackgroundColor #EBF2FA
+  BorderColor #1F6AA5
+  FontColor #1A1A2E
+  FontSize 12
+  DiamondBackgroundColor #FFF3CD
+  DiamondBorderColor #CC8800
+  StartColor #2E4057
+  EndColor   #2E4057
+}
+skinparam ArrowColor #1F6AA5
+skinparam swimlane {
+  BorderColor #2E4057
+  TitleFontColor #FFFFFF
+  TitleBackgroundColor #2E4057
+}
+
+|#D4EDDA| Runway Controller |
+|#D1ECF1| CLI |
+|#EBF2FA| FlightManager |
+|#FFF3CD| Runway Vector |
+
+|Runway Controller|
+start
+:Select **Option 7 — Manage Runways**;
+
+|CLI|
+:Display sub-menu:\n1. View Status\n2. Allocate\n3. Free;
+
+|Runway Controller|
+if (Choice?) then (1 — View Status)
+  |FlightManager|
+  :getRunwayStatus()\nReturn copy of runways vector;
+  |CLI|
+  :Print formatted table\n(Runway ID | Free/Occupied);
+  stop
+else if (2 — Allocate) then
+  |Runway Controller|
+  :Enter **flightNo**;
+
+  |FlightManager|
+  :flightIndex.find(flightNo);
+
+  if (Flight exists & valid?) then (no)
+    |CLI|
+    #FF6B6B:Print "No runway available!";
+    stop
+  else (yes)
+  endif
+
+  |Runway Vector|
+  :Iterate runways[1..3];
+
+  if (Any runway free?) then (no)
+    |CLI|
+    #FF6B6B:Print "No runway available!";
+    stop
+  else (yes)
+    :Select first free runway;
+    :Set runway.free = **false**;
+  endif
+
+  |FlightManager|
+  :undoStack.push("ALLOC " + runwayId + " " + flightNo);
+  :return runway.id;
+
+  |CLI|
+  #90EE90:Print "Runway X allocated to FlightNo";
+  stop
+
+else (3 — Free)
+  |Runway Controller|
+  :Enter **runway ID**;
+
+  |Runway Vector|
+  :Find runway by id;
+
+  if (Valid runway ID?) then (no)
+    |CLI|
+    #FF6B6B:Print "Invalid runway ID!";
+    stop
+  else (yes)
+    :Set runway.free = **true**;
+  endif
+
+  |FlightManager|
+  :undoStack.push("FREE " + id);
+  :return **true**;
+
+  |CLI|
+  #90EE90:Print "Runway X freed!";
+  stop
+endif
+
+@enduml

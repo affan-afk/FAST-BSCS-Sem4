@@ -1,0 +1,99 @@
+@startuml IntelliFly_Sequence_StringSearch
+
+skinparam backgroundColor #FAFCFF
+skinparam sequence {
+  ParticipantBackgroundColor #EBF2FA
+  ParticipantBorderColor #1F6AA5
+  ParticipantFontColor #1A1A2E
+  ParticipantFontSize 12
+  ParticipantFontStyle bold
+  ActorBackgroundColor #2E4057
+  ActorFontColor White
+  ActorBorderColor #1F6AA5
+  ArrowColor #1F6AA5
+  ArrowFontColor #2E4057
+  ArrowFontSize 11
+  LifeLineBorderColor #1F6AA5
+  LifeLineBackgroundColor #D1ECF1
+  GroupBackgroundColor #FFFBE6
+  GroupBorderColor #CC8800
+  NoteBackgroundColor #FFFBE6
+  NoteBorderColor #CC8800
+}
+
+title IntelliFly — Sequence: UC-09 Search Descriptions (KMP)
+
+actor "Operator" as User
+participant "CLI" as CLI
+participant "FlightManager" as FM
+participant "flights\nvector<Flight>" as FV
+participant "strsearch\n::kmp()" as KMP
+
+User -> CLI : Search → Enter pattern
+activate CLI
+CLI -> User : Prompt "Search pattern:"
+User -> CLI : Enter pattern (e.g. "Emergency")
+
+CLI -> FM : searchInLogs("Emergency", "kmp")
+activate FM
+
+FM -> FV : Iterate valid flights
+activate FV
+
+loop for each valid Flight f
+  FV -> FM : f.flightNo + ":" + f.origin + "->" + f.dest + " " + f.description + "\n"
+end
+
+FV --> FM : big string (concatenated log)
+deactivate FV
+
+note over FM
+  All flight metadata is concatenated
+  into one large string 'big'.
+  Pattern matching runs over this
+  entire text corpus.
+end note
+
+FM -> KMP : kmp(big, "Emergency")
+activate KMP
+
+KMP -> KMP : Build LPS (failure) array\nfrom pattern in O(m)
+
+note right of KMP
+  LPS[i] = length of longest
+  proper prefix of pattern[0..i]
+  that is also a suffix.
+end note
+
+KMP -> KMP : Two-pointer scan:\ni over text, j over pattern\nO(n) scan
+
+loop while i < big.size()
+  alt text[i] == pattern[j]
+    KMP -> KMP : i++, j++
+    alt j == pattern.size()
+      KMP -> KMP : Record match at position (i-j)\nj = lps[j-1]
+    end
+  else mismatch
+    alt j > 0
+      KMP -> KMP : j = lps[j-1]\n(do not advance i)
+    else
+      KMP -> KMP : i++
+    end
+  end
+end
+
+KMP --> FM : vector<int> positions
+deactivate KMP
+
+FM --> CLI : vector<int> positions
+deactivate FM
+
+alt positions.empty()
+  CLI -> User : "No matches found."
+else
+  CLI -> User : "Found N matches at positions: p1 p2 p3..."
+end
+
+deactivate CLI
+
+@enduml

@@ -1,0 +1,92 @@
+@startuml IntelliFly_DeploymentDiagram
+
+skinparam backgroundColor #FAFCFF
+skinparam node {
+  BackgroundColor #EBF2FA
+  BorderColor #1F6AA5
+  FontColor #1A1A2E
+  FontSize 12
+  FontStyle bold
+}
+skinparam artifact {
+  BackgroundColor #D4EDDA
+  BorderColor #28A745
+  FontColor #1A1A2E
+  FontSize 11
+}
+skinparam component {
+  BackgroundColor #FFF3CD
+  BorderColor #CC8800
+  FontColor #1A1A2E
+  FontSize 11
+}
+skinparam database {
+  BackgroundColor #F8D7DA
+  BorderColor #DC3545
+}
+skinparam note {
+  BackgroundColor #FFFBE6
+  BorderColor #CCAA00
+  FontSize 11
+}
+skinparam ArrowColor #1F6AA5
+skinparam ArrowFontColor #2E4057
+skinparam ArrowFontSize 11
+
+title IntelliFly — Deployment Diagram
+
+node "Developer / Operator Workstation" as WS {
+
+  node "Operating System\n(Linux / macOS / Windows with MinGW)" as OS {
+
+    node "C++ Runtime Environment\n(libstdc++ / libc++, C++17)" as RT {
+
+      artifact "IntelliFly\n<<executable>>\n(~400–600 KB, compiled binary)" as BIN
+
+      component "All-in-Memory\nData Store\n(process heap)" as MEM
+
+      note right of MEM
+        No persistent storage:
+        All flight, runway, and
+        route data lives exclusively
+        in process memory.
+        Data is lost on exit.
+      end note
+
+      BIN --> MEM : "allocates &\nmanages at runtime"
+    }
+
+    component "Terminal / Console\n(bash / zsh / cmd / PowerShell)" as TERM
+  }
+
+  node "Build Toolchain" as BUILD {
+    component "GCC / Clang\ng++ -std=c++17 -O2" as GCC
+    artifact "IntelliFly.cpp\n<<single source file>>\n(1353 lines)" as SRC
+  }
+}
+
+' External actor
+actor "Operator" as USR
+
+' Connections
+USR <--> TERM      : "keyboard input /\nformatted text output\n(stdin / stdout)"
+TERM <--> BIN      : "process I/O"
+SRC --> GCC        : "compiles"
+GCC --> BIN        : "produces"
+
+note bottom of WS
+  Minimum Hardware:
+  • CPU: any x86-64
+  • RAM: ≥ 512 MB (< 10 MB used in practice)
+  • Storage: < 1 MB (binary only)
+  No network, no database, no GPU required.
+end note
+
+note right of BUILD
+  Compile Command:
+  g++ -std=c++17 IntelliFly.cpp -O2 -o IntelliFly
+  Run:
+  ./IntelliFly
+end note
+
+@enduml

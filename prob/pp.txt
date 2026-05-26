@@ -1,0 +1,1820 @@
+NW Exercise # 2.2 Questions 2.18-2.2,2.52,2.53,2.109
+Exercise # 3.3 Questions 3.113- 3.135 Questions 3.62-
+3.78
+Exercise # 2.2
+For each data set in Exercises 2.18–2.23,
+a. determine a frequency distribution.
+b. obtain a relative-frequency distribution.
+c. draw a pie chart.
+d. construct a bar chart
+2.18 Top Broadcast Shows
+The networks for the top 20 television shows, as determined by the Nielsen Ratings for the week
+ending October 26, 2008, are shown below.
+CBS ABC CBS ABC ABC
+Fox CBS CBS Fox CBS
+ABC CBS CBS CBS Fox
+Fox Fox CBS Fox ABC
+Tasks:
+a. determine a frequency distribution.
+b. obtain a relative-frequency distribution.
+c. draw a pie chart.
+d. construct a bar chart.
+2.19 NCAA Wrestling Champs
+From NCAA.com, the NCAA wrestling champions for the years 1992–2008 are:
+1992 Iowa
+1993 Iowa
+1994 Oklahoma State
+1995 Iowa
+1996 Iowa
+2005 Oklahoma State
+2006 Oklahoma State
+2007 Minnesota
+2008 Iowa
+Tasks:
+a. determine a frequency distribution.
+b. obtain a relative-frequency distribution.
+c. draw a pie chart.
+d. construct a bar chart.
+2.20 Colleges of Students
+Data on college affiliation of students in an Introduction to Computer Science course:
+ENG ENG BUS BUS ENG
+LIB LIB ENG ENG ENG
+BUS BUS ENG BUS ENG
+LIB BUS BUS BUS ENG
+ENG ENG LIB ENG BUS
+Tasks:
+a. determine a frequency distribution.
+b. obtain a relative-frequency distribution.
+c. draw a pie chart.
+d. construct a bar chart.
+2.21 Class Levels
+Class levels of students in Professor Weiss’s introductory statistics course:
+Jr
+So So Jr Fr Jr So Jr So
+So So Sr So Jr Jr Sr Fr
+Jr So Jr Fr Sr Jr So
+Jr Fr Fr Jr Sr
+So Sr Sr So Jr So Sr So So Fr So
+Tasks:
+a. determine a frequency distribution.
+b. obtain a relative-frequency distribution.
+c. draw a pie chart.
+d. construct a bar chart.
+2.22 U.S. Regions
+Regions of the 50 U.S. states:
+SO WE WE MW NE WE WE SO MW SO
+WE NE WE SO MW MW NE WE SO WE
+WE SO MW SO MW WE SO NE SO SO
+SO SO MW NE SO NE MW NE WE MW
+WE SO MW SO MW NE MW SO NE WE
+Tasks:
+a. determine a frequency distribution.
+b. obtain a relative-frequency distribution.
+c. draw a pie chart.
+d. construct a bar chart.
+For each data set in Exercises 2.52–2.63, use the specified grouping method to:
+a. determine a frequency distribution.
+b. obtain a relative-frequency distribution.
+c. construct a frequency histogram based on your result from part (a).
+d. construct a relative-frequency histogram based on your result from part (b).
+2.52 Number of Siblings
+Professor Weiss asked his introductory statistics students to state how many siblings they have.
+Use single-value grouping.
+1 3 2 1 1 0 1 1
+3 0 2 2 1 2 0 2
+1 2 2 1 0 1 1 1
+1 1 0 2 0 3 4 2
+0 2 1 1 2 1 1 0
+Tasks:
+a. determine a frequency distribution.
+b. obtain a relative-frequency distribution.
+c. construct a frequency histogram.
+d. construct a relative-frequency histogram.
+2.53 Household Size
+Data on the number of people per household for a sample of 40 households. Use single-value
+grouping.
+2 5 2 1 1 2 3 4
+1 4 4 2 1 4 3 3
+7 1 2 2 3 4 2 2
+6 5 2 5 1 3 2 5
+2 1 3 3 2 2 3 3
+Tasks:
+a. determine a frequency distribution.
+b. obtain a relative-frequency distribution.
+c. construct a frequency histogram.
+d. construct a relative-frequency histogram.
+
+Exercise # 3.3
+Exercises 3.113–3.120
+We have provided simple data sets for you to practice finding the descriptive measures discussed
+in this section. For each data set:
+a. obtain the quartiles.
+b. determine the interquartile range.
+c. find the five-number summary.
+3.113
+1, 2, 3, 4
+3.114
+1, 2, 3, 4, 1, 2, 3, 4
+3.115
+1, 2, 3, 4, 5
+3.116
+1, 2, 3, 4, 5, 1, 2, 3, 4, 5
+3.117
+1, 2, 3, 4, 5, 6
+3.118
+1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6
+3.119
+1, 2, 3, 4, 5, 6, 7
+3.120
+1, 2, 3, 4, 5, 6, 7, 1, 2, 3, 4, 5, 6, 7
+Exercises 3.121–3.128
+a. obtain and interpret the quartiles.
+b. determine and interpret the interquartile range.
+c. find and interpret the five-number summary.
+d. identify potential outliers, if any.
+e. construct and interpret a boxplot.
+3.121 The Great Gretzky
+Wayne Gretzky, a retired professional hockey player, played 20 seasons in the National Hockey
+League (NHL), from 1980 through 1999. S. Berry explored some of Gretzky’s accomplishments in “A
+Statistician Reads the Sports Pages” (Chance, Vol. 16, No. 1, pp. 49–54). The following table shows
+the number of games in which Gretzky played during each of his 20 seasons in the NHL.
+79 80 80 80 74
+80 80 79 64 78
+73 78 74 45 81
+48 80 82 82 70
+3.122 Parenting Grandparents
+In the article “Grandchildren Raised by Grandparents, a Troubling Trend” (California Agriculture, Vol.
+55, No. 2, pp. 10–17), M. Blackburn considered the rates of children (under 18 years of age) living in
+California with grandparents as their primary caretakers. A sample of 14 California counties yielded
+the following percentages of children under 18 living with grandparents.
+5.9 4.4 4.0 5.8 5.7 5.1 5.1
+6.1 4.1 4.5 4.4 4.9 6.5 4.9
+3.123 Hospital Stays
+The U.S. National Center for Health Statistics compiles data on the length of stay by patients in
+short-term hospitals and publishes its findings in Vital and Health Statistics. A random sample of 21
+patients yielded the following data on length of stay, in days.
+4 4 12 18 9 6 12
+3 6 15 7 3 55 1
+10 13 5 7 1 23 9
+3.124 Miles Driven
+The U.S. Federal Highway Administration conducts studies on motor vehicle travel by type of
+vehicle. Results are published annually in Highway Statistics. A sample of 15 cars yields the
+following data on number of miles driven, in thousands, for last year.
+13.2 13.3 11.9 15.7 11.3
+12.2 16.7 10.7 3.3 13.6
+14.8 9.6 11.6 8.7 15.0
+3.125 Hurricanes
+An article by D. Schaefer et al. (Journal of Tropical Ecology, Vol. 16, pp. 189–207) reported on a longterm study of the effects of hurricanes on tropical streams of the Luquillo Experimental Forest in
+Puerto Rico. The study shows that Hurricane Hugo had a significant impact on stream water
+chemistry. The following table shows a sample of 10 ammonia fluxes in the first year after Hugo.
+Data are in kilograms per hectare per year.
+96 66 147 147 175
+116 57 154 88 154
+3.126 Sky Guide
+The publication California Wild: Natural Sciences for Thinking Animals has a monthly feature called
+the “Sky Guide” that keeps track of the sunrise and sunset for the first day of each month in San
+Francisco. Over several issues, B. Quock from the Morrison Planetarium recorded the following
+sunrise times from July 1 of one year through June 1 of the next year. The times are given in minutes
+past midnight.
+352 374 400 426 396 427
+445 434 400 354 374 349
+3.127 Capital Spending
+An issue of Brokerage Report discussed the capital spending of telecommunications companies in
+the United States and Canada. The capital spending, in thousands of dollars, for each of 27
+telecommunications companies is shown in the following table.
+9,310 2,515 3,027 1,300 1,800 70 3,634 656 664 5,947 649 682 1,433 389 17,341 5,299 195 8,543
+4,200 7,886 11,189 1,006 1,403 1,982 21 125 2,205
+3.128 Medieval Cremation Burials
+In the article “Material Culture as Memory: Combs and Cremations in Early Medieval Britain” (Early
+Medieval Europe, Vol. 12, Issue 2, pp. 89–128), H. Williams discussed the frequency of cremation
+burials found in 17 archaeological sites in eastern England. Here are the data.
+83 64 46 48 523 35 34 265 2484
+46 385 21 86 429 51 258 119
+3.129 Nicotine Patches
+In the paper “The Smoking Cessation Efficacy of Varying Doses of Nicotine Patch Delivery Systems
+4 to 5 Years Post-Quit Day” (Preventative Medicine, 28, pp. 113–118), D. Daughton et al. discussed
+the long-term effectiveness of transdermal nicotine patches on participants who had previously
+smoked at least 20 cigarettes per day. A sample of 15 participants in the Transdermal Nicotine
+Study Group (TNSG) reported that they now smoke the following number of cigarettes per day.
+10 9 10 8 7
+6 10 9 10 8
+9 10 8 8 10
+a. Determine the quartiles for these data.
+b. Remark on the usefulness of quartiles with respect to this dataset.
+3.135
+What can you say about the boxplot of a symmetric distribution?
+
+3.63 Age of U.S. Residents
+The U.S. Census Bureau publishes information about ages of people in the United States in Current
+Population Reports. A sample of five U.S. residents have the following ages, in years.
+21 54 9 45 51
+a. Determine the range of these ages.
+b. Find the sample standard deviation of these ages by using the defining formula, Definition 3.6 on
+page 105.
+c. Find the sample standard deviation of these ages by using the computing formula, Formula 3.1
+on page 106.
+d. Compare your work in parts (b) and (c).
+3.64
+Consider the data set 3, 3, 3, 3, 3, 3.
+a. Guess the value of the sample standard deviation without calculating it. Explain your reasoning.
+b. Use the defining formula to calculate the sample standard deviation.
+c. Complete the following statement and explain your reasoning:
+If all observations in a data set are equal, the sample standard deviation is ________.
+d. Complete the following statement and explain your reasoning:
+If the sample standard deviation of a data set is 0, then ________.
+Exercises 3.65–3.70
+We have provided simple data sets for you to practice the basics of finding measures of variation.
+For each data set, determine the:
+a. range.
+b. sample standard deviation.
+3.65
+4, 0, 5
+3.66
+3, 5, 7
+3.67
+1, 2, 4, 4
+3.68
+2, 5, 0, −1
+3.69
+1, 9, 8, 4, 3
+3.70
+4, 2, 0, 2, 2
+Exercises 3.71–3.78
+Determine the range and sample standard deviation for each of the data sets. For the sample
+standard deviation, round each answer to one more decimal place than that used for the
+observations.
+3.71 Amphibian Embryos
+In a study of the effects of radiation on amphibian embryos titled “Shedding Light on Ultraviolet
+Radiation and Amphibian Embryos” (BioScience, Vol. 53, No. 6, pp. 551–561), L. Licht recorded the
+time it took for a sample of seven different species of frogs’ and toads’ eggs to hatch. The following
+table shows the times to hatch, in days.
+6 7 11 6 5 5 11
+3.72 Hurricanes
+An article by D. Schaefer et al. (Journal of Tropical Ecology, Vol. 16, pp. 189–207) reported on a longterm study of the effects of hurricanes on tropical streams of the Luquillo Experimental Forest in
+Puerto Rico. The study showed that Hurricane Hugo had a significant impact on stream water
+chemistry. The following table shows a sample of 10 ammonia fluxes in the first year after Hugo.
+Data are in kilograms per hectare per year.
+96 66 147 147 175
+116 57 154 88 154
+3.73 Tornado Touchdowns
+Each year, tornadoes that touch down are recorded by the Storm Prediction Center and published
+in Monthly Tornado Statistics. The following table gives the number of tornadoes that touched down
+in the United States during each month of one year.
+[SOURCE: National Oceanic and Atmospheric Administration.]
+3 2 47 118 204 97
+68 86 62 57 98 99
+3.74 Technical Merit
+In one Winter Olympics, Michelle Kwan competed in the Short Program ladies singles event. From
+nine judges, she received scores ranging from 1 (poor) to 6 (perfect). The following table provides
+the scores that the judges gave her on technical merit, found in an article by S. Berry (Chance, Vol.
+15, No. 2, pp. 14–18).
+5.8 5.7 5.9 5.7 5.5 5.7 5.7 5.7 5.6
+3.75 Billionaires’ Club
+Each year, Forbes magazine compiles a list of the 400 richest Americans. As of September 17,
+2008, the top 10 on the list are as shown in the following table.
+Person Wealth ($ billions)
+William Gates III 57.0
+Warren Buffett 50.0
+Lawrence Ellison 27.0
+Jim Walton 23.4
+S. Robson Walton 23.3
+Alice Walton 23.2
+Christy Walton & family 23.2
+Michael Bloomberg 20.0
+Charles Koch 19.0
+David Koch 19.0
+3.76 AML and the Cost of Labor
+Active Management of Labor (AML) was introduced in the 1960s to reduce the amount of time a
+woman spends in labor during the birth process. R. Rogers et al. conducted a study to determine
+whether AML also translates into a reduction in delivery cost to the patient. They reported their
+findings in the paper “Active Management of Labor: A Cost Analysis of a Randomized Controlled
+Trial” (Western Journal of Medicine, Vol. 172, pp. 240–243). The following table displays the costs, in
+dollars, of eight randomly sampled AML deliveries.
+3141 2873 2116 1684
+3470 1799 2539 3093
+3.77 Fuel Economy
+Every year, Consumer Reports publishes a magazine titled New Car Ratings and Review that looks
+at vehicle profiles for the year’s models. It lets you see in one place how, within each category, the
+vehicles compare. One category of interest, especially when fuel prices are rising, is fuel economy,
+measured in miles per gallon (mpg). Following is a list of overall mpg for 14 different full-sized and
+compact pickups.
+14 13 14 13 14 14 11
+12 15 15 17 14 15 16
+3.78 Router Horsepower
+In the article “Router Roundup” (Popular Mechanics, Vol. 180, No. 12, pp. 104–109), T. Klenck
+reported on tests of seven fixed-base routers for performance, features, and handling. The following
+table gives the horsepower for each of the seven routers tested.
+1.75 2.25 2.25 2.25 1.75 2.00 1.50
+WP Questions 2.1-2.13 2.21-2.48.2.51,2.55,2.58 2.49-
+2.65 2.73-2.89 2.95-2.102
+2.1
+List the elements of each of the following sample spaces:
+(a) the set of integers between 1 and 50 divisible by 8;
+(b) the set 𝑆 = {𝑥 ∣ 𝑥
+2 + 4𝑥 − 5 = 0};
+(c) the set of outcomes when a coin is tossed until a tail or three heads appear;
+(d) the set 𝑆 = {𝑥 ∣ 𝑥 is a continent};
+(e) the set 𝑆 = {𝑥 ∣ 2𝑥 − 4 ≥ 0 and 𝑥 < 1}.
+2.2
+Use the rule method to describe the sample space 𝑆consisting of all points in the first quadrant
+inside a circle of radius 3 with center at the origin.
+2.3
+Which of the following events are equal?
+(a) 𝐴 = {1,3};
+(b) 𝐵 = {𝑥 ∣ 𝑥 is a number on a die};
+(c) 𝐶 = {𝑥 ∣ 𝑥
+2 − 4𝑥 + 3 = 0};
+(d) 𝐷 = {𝑥 ∣ 𝑥 is the number of heads when six coins are tossed}.
+2.4
+An experiment involves tossing a pair of dice, one green and one red, and recording the numbers
+that come up. If 𝑥equals the outcome on the green die and 𝑦the outcome on the red die, describe
+the sample space 𝑆
+(a) by listing the elements (𝑥
+, 𝑦);
+(b) by using the rule method.
+2.5
+An experiment consists of tossing a die and then flipping a coin once if the number on the die is
+even. If the number on the die is odd, the coin is flipped twice. Using the notation 4H, for example,
+to denote the outcome that the die comes up 4 and then the coin comes up heads, and 3HT to
+denote the outcome that the die comes up 3 followed by a head and then a tail on the coin,
+construct a tree diagram to show the 18 elements of the sample space 𝑆.
+2.6
+Two jurors are selected from 4 alternates to serve at a murder trial. Using the notation 𝐴1𝐴3, for
+example, to denote the simple event that alternates 1 and 3 are selected, list the 6 elements of the
+sample space 𝑆.
+2.7
+Four students are selected at random from a chemistry class and classified as male or female. List
+the elements of the sample space 𝑆1, using the letter M for male and F for female. Define a second
+sample space 𝑆2where the elements represent the number of females selected.
+2.8
+For the sample space of Exercise 2.4,
+(a) list the elements corresponding to the event 𝐴that the sum is greater than 8;
+(b) list the elements corresponding to the event 𝐵that a 2 occurs on either die;
+(c) list the elements corresponding to the event 𝐶that a number greater than 4 comes up on the
+green die;
+(d) list the elements corresponding to the event 𝐴 ∩ 𝐶;
+(e) list the elements corresponding to the event 𝐴 ∩ 𝐵;
+(f) list the elements corresponding to the event 𝐵 ∩ 𝐶;
+(g) construct a Venn diagram to illustrate the intersections and unions of the events 𝐴, 𝐵, and 𝐶.
+2.9
+For the sample space of Exercise 2.5,
+(a) list the elements corresponding to the event 𝐴that a number less than 3 occurs on the die;
+(b) list the elements corresponding to the event 𝐵that two tails occur;
+(c) list the elements corresponding to the event 𝐴
+′
+;
+(d) list the elements corresponding to the event 𝐴
+′ ∩ 𝐵;
+(e) list the elements corresponding to the event 𝐴 ∪ 𝐵.
+2.10
+An engineering firm is hired to determine if certain waterways in Virginia are safe for fishing.
+Samples are taken from three rivers.
+(a) List the elements of a sample space 𝑆, using the letters F for safe to fish and N for not safe to
+fish.
+(b) List the elements of 𝑆corresponding to event 𝐸that at least two of the rivers are safe for fishing.
+(c) Define an event that has as its elements the points
+{𝐹𝐹𝐹, 𝑁𝐹𝐹, 𝐹𝐹𝑁, 𝑁𝐹𝑁}.
+2.11
+The resumés of two male applicants for a college teaching position in chemistry are placed in the
+same file as the resumés of two female applicants. Two positions become available, and the first,
+at the rank of assistant professor, is filled by selecting one of the four applicants at random. The
+second position, at the rank of instructor, is then filled by selecting at random one of the remaining
+three applicants. Using the notation 𝑀2𝐹1, for example, to denote the simple event that the first
+position is filled by the second male applicant and the second position is then filled by the first
+female applicant,
+(a) list the elements of a sample space 𝑆;
+(b) list the elements of 𝑆corresponding to event 𝐴that the position of assistant professor is filled by
+a male applicant;
+(c) list the elements of 𝑆corresponding to event 𝐵that exactly one of the two positions is filled by a
+male applicant;
+(d) list the elements of 𝑆corresponding to event 𝐶that neither position is filled by a male applicant;
+(e) list the elements of 𝑆corresponding to the event 𝐴 ∩ 𝐵;
+(f) list the elements of 𝑆corresponding to the event 𝐴 ∪ 𝐶;
+(g) construct a Venn diagram to illustrate the intersections and unions of the events 𝐴, 𝐵, and 𝐶.
+2.12
+Exercise and diet are being studied as possible substitutes for medication to lower blood pressure.
+Three groups of subjects will be used to study the effect of exercise. Group 1 is sedentary, while
+group 2 walks and group 3 swims for 1 hour a day. Half of each of the three exercise groups will be
+on a salt-free diet. An additional group of subjects will not exercise or restrict their salt, but will take
+the standard medication. Use Z for sedentary, W for walker, S for swimmer, Y for salt, N for no salt,
+M for medication, and F for medication free.
+(b) Given that 𝐴 is the set of nonmedicated subjects and 𝐵is the set of walkers, list the elements of
+𝐴 ∪ 𝐵.
+(c) List the elements of 𝐴 ∩ 𝐵.
+2.13
+Construct a Venn diagram to illustrate the possible intersections and unions for the following
+events relative to the sample space consisting of all automobiles made in the United States.
+𝐹: Four door
+𝑆: Sun roof
+𝑃: Power steering
+2.21
+Registrants at a large convention are offered 6 sightseeing tours on each of 3 days. In how many
+ways can a person arrange to go on a sightseeing tour planned by this convention?
+2.22
+In a medical study, patients are classified in 8 ways according to whether they have blood type AB+,
+AB−, A+, A−, B+, B−, O+, or O−, and also according to whether their blood pressure is low, normal,
+or high. Find the number of ways in which a patient can be classified.
+2.23
+If an experiment consists of throwing a die and then drawing a letter at random from the English
+alphabet, how many points are there in the sample space?
+2.24
+Students at a private liberal arts college are classified as being freshmen, sophomores, juniors, or
+seniors, and also according to whether they are male or female. Find the total number of possible
+classifications for the students of that college.
+2.25
+A certain brand of shoes comes in 5 different styles, with each style available in 4 distinct colors. If
+the store wishes to display pairs of these shoes showing all of its various styles and colors, how
+many different pairs will the store have on display?
+2.26
+A California study concluded that following 7 simple health rules can extend a man’s life by 11
+years on the average and a woman’s life by 7 years. These 7 rules are as follows: no smoking, get
+regular exercise, use alcohol only in moderation, get 7 to 8 hours of sleep, maintain proper weight,
+eat breakfast, and do not eat between meals. In how many ways can a person adopt 5 of these
+rules to follow
+(a) if the person presently violates all 7 rules?
+(b) if the person never drinks and always eats breakfast?
+2.27
+A developer of a new subdivision offers a prospective home buyer a choice of 4 designs, 3 different
+heating systems, a garage or carport, and a patio or screened porch. How many different plans are
+available to this buyer?
+2.28
+A drug for the relief of asthma can be purchased from 5 different manufacturers in liquid, tablet, or
+capsule form, all of which come in regular and extra strength. How many different ways can a
+doctor prescribe the drug for a patient suffering from asthma?
+2.29
+In a fuel economy study, each of 3 race cars is tested using 5 different brands of gasoline at 7 test
+sites located in different regions of the country. If 2 drivers are used in the study, and test runs are
+made once under each distinct set of conditions, how many test runs are needed?
+2.30
+In how many different ways can a true-false test consisting of 9 questions be answered?
+2.31
+A witness to a hit-and-run accident told the police that the license number contained the letters
+RLH followed by 3 digits, the first of which was a 5. If the witness cannot recall the last 2 digits, but
+is certain that all 3 digits are different, find the maximum number of automobile registrations that
+the police may have to check.
+2.32
+(a) In how many ways can 6 people be lined up to get on a bus?
+(b) If 3 specific persons, among 6, insist on following each other, how many ways are possible?
+(c) If 2 specific persons, among 6, refuse to follow each other, how many ways are possible?
+2.33
+If a multiple-choice test consists of 5 questions, each with 4 possible answers of which only 1 is
+correct,
+(a) in how many different ways can a student check off one answer to each question?
+(b) in how many ways can a student check off one answer to each question and get all the answers
+wrong?
+2.34
+(a) How many distinct permutations can be made from the letters of the word COLUMNS?
+(b) How many of these permutations start with the letter M?
+2.35
+A contractor wishes to build 9 houses, each different in design. In how many ways can he place
+these houses on a street if 6 lots are on one side of the street and 3 lots are on the opposite side?
+2.36
+(a) How many three-digit numbers can be formed from the digits 0, 1, 2, 3, 4, 5, and 6 if each digit
+can be used only once?
+(b) How many of these are odd numbers?
+(c) How many are greater than 330?
+2.37
+In how many ways can 4 boys and 5 girls sit in a row if the boys and girls must alternate?
+2.38
+Four married couples have bought 8 seats in the same row for a concert. In how many different
+ways can they be seated
+(a) with no restrictions?
+(b) if each couple is to sit together?
+(c) if all the men sit together to the right of all the women?
+2.39
+In a regional spelling bee, the 8 finalists consist of 3 boys and 5 girls. Find the number of sample
+points in the sample space 𝑆for the number of possible orders at the conclusion of the contest for
+(a) all 8 finalists;
+(b) the first 3 positions.
+2.40
+In how many ways can 5 starting positions on a basketball team be filled with 8 men who can play
+any of the positions?
+2.41
+Find the number of ways that 6 teachers can be assigned to 4 sections of an introductory
+psychology course if no teacher is assigned to more than one section.
+2.42
+Three lottery tickets for first, second, and third prizes are drawn from a group of 40 tickets. Find the
+number of sample points in 𝑆for awarding the 3 prizes if each contestant holds only 1 ticket.
+2.43
+In how many ways can 5 different trees be planted in a circle?
+2.44
+In how many ways can a caravan of 8 covered wagons from Arizona be arranged in a circle?
+2.45
+How many distinct permutations can be made from the letters of the word INFINITY?
+2.46
+In how many ways can 3 oaks, 4 pines, and 2 maples be arranged along a property line if one does
+not distinguish among trees of the same kind?
+2.47
+How many ways are there to select 3 candidates from 8 equally qualified recent graduates for
+openings in an accounting firm?
+2.48
+How many ways are there that no two students will have the same birth date in a class of size 60?
+2.49
+Find the errors in each of the following statements:
+(a) The probabilities that an automobile salesperson will sell 0, 1, 2, or 3 cars on any given day in
+February are, respectively, 0.19, 0.38, 0.29, and 0.15.
+(b) The probability that it will rain tomorrow is 0.40, and the probability that it will not rain tomorrow
+is 0.52.
+(c) The probabilities that a printer will make 0, 1, 2, 3, or 4 or more mistakes in setting a document
+are, respectively, 0.19, 0.34, −0.25, 0.43, and 0.29.
+(d) On a single draw from a deck of playing cards, the probability of selecting a heart is 1/4, the
+probability of selecting a black card is 1/2, and the probability of selecting both a heart and a black
+card is 1/8.
+2.50
+Assuming that all elements of S in Exercise 2.8 on page 42 are equally likely to occur, find:
+(a) the probability of event A;
+(b) the probability of event C;
+(c) the probability of event A ∩ C.
+2.51
+A box contains 500 envelopes, of which 75 contain $100 in cash, 150 contain $25, and 275 contain
+$10. An envelope may be purchased for $25. What is the sample space for the different amounts of
+money? Assign probabilities to the sample points and then find the probability that the first
+envelope purchased contains less than $100.
+2.52
+Suppose that in a senior college class of 500 students it is found that 210 smoke, 258 drink
+alcoholic beverages, 216 eat between meals, 122 smoke and drink alcoholic beverages, 83 eat
+between meals and drink alcoholic beverages, 97 smoke and eat between meals, and 52 engage in
+all three of these bad health practices. If a member of this senior class is selected at random, find
+the probability that the student:
+(a) smokes but does not drink alcoholic beverages;
+(b) eats between meals and drinks alcoholic beverages but does not smoke;
+(c) neither smokes nor eats between meals.
+2.53
+The probability that an American industry will locate in Shanghai, China, is 0.7, the probability that
+it will locate in Beijing, China, is 0.4, and the probability that it will locate in either Shanghai or
+Beijing or both is 0.8. What is the probability that the industry will locate:
+(a) in both cities?
+(b) in neither city?
+2.54
+From past experience, a stockbroker believes that under present economic conditions a customer
+will invest in tax-free bonds with a probability of 0.6, will invest in mutual funds with a probability of
+0.3, and will invest in both tax-free bonds and mutual funds with a probability of 0.15. At this time,
+find the probability that a customer will invest:
+(a) in either tax-free bonds or mutual funds;
+(b) in neither tax-free bonds nor mutual funds.
+2.55
+If each coded item in a catalog begins with 3 distinct letters followed by 4 distinct nonzero digits,
+find the probability of randomly selecting one of these coded items with the first letter a vowel and
+the last digit even.
+2.56
+An automobile manufacturer is concerned about a possible recall of its best-selling four-door
+sedan. If there were a recall, there is a probability of 0.25 of a defect in the brake system, 0.18 of a
+defect in the transmission, 0.17 of a defect in the fuel system, and 0.40 of a defect in some other
+area.
+(a) What is the probability that the defect is the brakes or the fueling system if the probability of
+defects in both systems simultaneously is 0.15?
+(b) What is the probability that there are no defects in either the brakes or the fueling system?
+2.57
+If a letter is chosen at random from the English alphabet, find the probability that the letter:
+(a) is a vowel exclusive of y;
+(b) is listed somewhere ahead of the letter j;
+(c) is listed somewhere after the letter g.
+2.58
+A pair of fair dice is tossed. Find the probability of getting:
+(a) a total of 8;
+(b) at most a total of 5.
+2.59
+In a poker hand consisting of 5 cards, find the probability of holding:
+(a) 3 aces;
+(b) 4 hearts and 1 club.
+2.60
+If 3 books are picked at random from a shelf containing 5 novels, 3 books of poems, and a
+dictionary, what is the probability that:
+(a) the dictionary is selected?
+(b) 2 novels and 1 book of poems are selected?
+2.61
+In a high school graduating class of 100 students, 54 studied mathematics, 69 studied history, and
+35 studied both mathematics and history. If one of these students is selected at random, find the
+probability that:
+(a) the student took mathematics or history;
+(b) the student did not take either of these subjects;
+(c) the student took history but not mathematics.
+2.62
+Dom’s Pizza Company uses taste testing and statistical analysis of the data prior to marketing any
+new product. Consider a study involving three types of crusts (thin, thin with garlic and oregano,
+and thin with bits of cheese). Dom’s is also studying three sauces (standard, a new sauce with more
+garlic, and a new sauce with fresh basil).
+(a) How many combinations of crust and sauce are involved?
+(b) What is the probability that a judge will get a plain thin crust with a standard sauce for his first
+taste test?
+2.63
+According to Consumer Digest (July/August 1996), the probable location of personal computers
+(PC) in the home is as follows:
+Adult bedroom: 0.03
+Child bedroom: 0.15
+Other bedroom: 0.14
+Office or den: 0.40
+Other rooms: 0.28
+(a) What is the probability that a PC is in a bedroom?
+(b) What is the probability that it is not in a bedroom?
+(c) Suppose a household is selected at random from households with a PC; in what room would you
+expect to find a PC?
+2.64
+Interest centers around the life of an electronic component. Suppose it is known that the
+probability that the component survives for more than 6000 hours is 0.42. Suppose also that the
+probability that the component survives no longer than 4000 hours is 0.04.
+(a) What is the probability that the life of the component is less than or equal to 6000 hours?
+(b) What is the probability that the life is greater than 4000 hours?
+2.65
+Consider the situation of Exercise 2.64. Let A be the event that the component fails a particular test
+and B be the event that the component displays strain but does not actually fail. Event A occurs
+with probability 0.20, and event B occurs with probability 0.35.
+(a) What is the probability that the component does not fail the test?
+(b) What is the probability that the component works perfectly well (i.e., neither displays strain nor
+fails the test)?
+(c) What is the probability that the component either fails or shows strain in the test?
+2.73
+If R is the event that a convict committed armed robbery and D is the event that the convict pushed
+dope, state in words what probabilities are expressed by:
+(a) P(R | D);
+(b) P(D′ | R);
+(c) P(R′ | D′).
+2.74
+A class in advanced physics is composed of 10 juniors, 30 seniors, and 10 graduate students. The
+final grades show that 3 of the juniors, 10 of the seniors, and 5 of the graduate students received an
+A for the course. If a student is chosen at random from this class and is found to have earned an A,
+what is the probability that he or she is a senior?
+2.75
+A random sample of 200 adults are classified below by sex and their level of education attained.
+Education Male Female
+Elementary 38 45
+Secondary 28 50
+College 22 17
+If a person is picked at random from this group, find the probability that:
+(a) the person is a male, given that the person has a secondary education;
+(b) the person does not have a college degree, given that the person is a female.
+2.76
+In an experiment to study the relationship of hypertension and smoking habits, the following data
+are collected for 180 individuals:
+Nonsmokers Moderate Smokers Heavy Smokers
+H 21 36 30
+Nonsmokers Moderate Smokers Heavy Smokers
+NH 48 26 19
+If one of these individuals is selected at random, find the probability that the person is:
+(a) experiencing hypertension, given that the person is a heavy smoker;
+(b) a nonsmoker, given that the person is experiencing no hypertension.
+2.77
+In the senior year of a high school graduating class of 100 students, 42 studied mathematics, 68
+studied psychology, 54 studied history, 22 studied both mathematics and history, 25 studied both
+mathematics and psychology, 7 studied history but neither mathematics nor psychology, 10
+studied all three subjects, and 8 did not take any of the three. Randomly select a student from the
+class and find the probabilities of the following events:
+(a) A person enrolled in psychology takes all three subjects.
+(b) A person not taking psychology is taking both history and mathematics.
+2.78
+A manufacturer of a flu vaccine is concerned about the quality of its flu serum. Batches of serum
+are processed by three different departments having rejection rates of 0.10, 0.08, and 0.12,
+respectively. The inspections by the three departments are sequential and independent.
+(a) What is the probability that a batch of serum survives the first departmental inspection but is
+rejected by the second department?
+(b) What is the probability that a batch of serum is rejected by the third department?
+2.79
+In USA Today (Sept. 5, 1996), the results of a survey involving the use of sleepwear while traveling
+were listed as follows:
+Type Male Female Total
+Underwear 0.220 0.160 0.244
+Nightgown 0.002 0.180 0.182
+Nothing 0.073 0.088 0.178
+Pajamas 0.102 0.024 0.175
+Type Male Female Total
+T-shirt 0.046 0.180 0.134
+Other 0.084 0.018 0.087
+(a) What is the probability that a traveler is a female who sleeps in the nude?
+(b) What is the probability that a traveler is male?
+(c) Assuming the traveler is male, what is the probability that he sleeps in pajamas?
+(d) What is the probability that a traveler is male if the traveler sleeps in pajamas or a T-shirt?
+2.80
+The probability that an automobile being filled with gasoline also needs an oil change is 0.25; the
+probability that it needs a new oil filter is 0.40; and the probability that both the oil and the filter
+need changing is 0.14.
+(a) If the oil has to be changed, what is the probability that a new oil filter is needed?
+(b) If a new oil filter is needed, what is the probability that the oil has to be changed?
+2.81
+The probability that a married man watches a certain television show is 0.4, and the probability that
+a married woman watches the show is 0.5. The probability that a man watches the show, given that
+his wife does, is 0.7. Find the probability that:
+(a) a married couple watches the show;
+(b) a wife watches the show, given that her husband does;
+(c) at least one member of a married couple will watch the show.
+2.82
+For married couples living in a certain suburb, the probability that the husband will vote on a bond
+referendum is 0.21, the probability that the wife will vote on the referendum is 0.28, and the
+probability that both the husband and the wife will vote is 0.15.
+(a) What is the probability that at least one member of a married couple will vote?
+(b) What is the probability that a wife will vote, given that her husband will vote?
+(c) What is the probability that a husband will vote, given that his wife will not vote?
+2.83
+The probability that a vehicle entering the Luray Caverns has Canadian license plates is 0.12; the
+probability that it is a camper is 0.28; and the probability that it is a camper with Canadian license
+plates is 0.09. What is the probability that:
+(a) a camper entering the Luray Caverns has Canadian license plates?
+(b) a vehicle with Canadian license plates entering the Luray Caverns is a camper?
+(c) a vehicle entering the Luray Caverns does not have Canadian plates or is not a camper?
+2.84
+The probability that the head of a household is home when a telemarketing representative calls is
+0.4. Given that the head of the house is home, the probability that goods will be bought from the
+company is 0.3. Find the probability that the head of the house is home and goods are bought from
+the company.
+2.85
+The probability that a doctor correctly diagnoses a particular illness is 0.7. Given that the doctor
+makes an incorrect diagnosis, the probability that the patient files a lawsuit is 0.9. What is the
+probability that the doctor makes an incorrect diagnosis and the patient sues?
+2.86
+In 1970, 11% of Americans completed four years of college; 43% of them were women. In 1990,
+22% of Americans completed four years of college; 53% of them were women (Time, Jan. 19, 1996).
+(a) Given that a person completed four years of college in 1970, what is the probability that the
+person was a woman?
+(b) What is the probability that a woman finished four years of college in 1990?
+(c) What is the probability that a man had not finished college in 1990?
+2.87
+A real estate agent has 8 master keys to open several new homes. Only 1 master key will open any
+given house. If 40% of these homes are usually left unlocked, what is the probability that the real
+estate agent can get into a specific home if the agent selects 3 master keys at random before
+leaving the office?
+2.88
+Before the distribution of certain statistical software, every fourth compact disk (CD) is tested for
+accuracy. The testing process consists of running four independent programs and checking the
+results. The failure rates for the four testing programs are, respectively, 0.01, 0.03, 0.02, and 0.01.
+(a) What is the probability that a CD was tested and failed any test?
+(b) Given that a CD was tested, what is the probability that it failed program 2 or 3?
+(c) In a sample of 100, how many CDs would you expect to be rejected?
+(d) Given that a CD was defective, what is the probability that it was tested?
+2.89
+A town has two fire engines operating independently. The probability that a specific engine is
+available when needed is 0.96.
+(a) What is the probability that neither is available when needed?
+(b) What is the probability that a fire engine is available when needed?
+2.95
+In a certain region of the country it is known from past experience that the probability of selecting
+an adult over 40 years of age with cancer is 0.05. If the probability of a doctor correctly diagnosing a
+person with cancer as having the disease is 0.78 and the probability of incorrectly diagnosing a
+person without cancer as having the disease is 0.06, what is the probability that an adult over 40
+years of age is diagnosed as having cancer?
+2.96
+Police plan to enforce speed limits by using radar traps at four different locations within the city
+limits. The radar traps at each of the locations L1, L2, L3, and L4 will be operated 40%, 30%, 20%,
+and 30% of the time. If a person who is speeding on her way to work has probabilities of 0.2, 0.1,
+0.5, and 0.2, respectively, of passing through these locations, what is the probability that she will
+receive a speeding ticket?
+2.97
+Referring to Exercise 2.95, what is the probability that a person diagnosed as having cancer actually
+has the disease?
+2.98
+If the person in Exercise 2.96 received a speeding ticket on her way to work, what is the probability
+that she passed through the radar trap located at L2?
+2.99
+Suppose that the four inspectors at a film factory are supposed to stamp the expiration date on
+each package of film at the end of the assembly line. John, who stamps 20% of the packages, fails
+to stamp the expiration date once in every 200 packages; Tom, who stamps 60% of the packages,
+fails to stamp the expiration date once in every 100 packages; Jeff, who stamps 15% of the
+packages, fails to stamp the expiration date once in every 90 packages; and Pat, who stamps 5% of
+the packages, fails to stamp the expiration date once in every 200 packages. If a customer
+complains that her package of film does not show the expiration date, what is the probability that it
+was inspected by John?
+2.100
+A regional telephone company operates three identical relay stations at different locations. During
+a one-year period, the number of malfunctions reported by each station and the causes are shown
+below.
+Cause Station A Station B Station C
+Problems with electricity supplied 2 4 1
+Computer malfunction 5 3 2
+Malfunctioning electrical equipment 7 4 2
+Caused by other human errors 1 7 5
+Suppose that a malfunction was reported and it was found to be caused by other human errors.
+What is the probability that it came from station C?
+2.101
+A paint-store chain produces and sells latex and semigloss paint. Based on long-range sales, the
+probability that a customer will purchase latex paint is 0.75. Of those that purchase latex paint,
+60% also purchase rollers. But only 30% of semigloss paint buyers purchase rollers. A randomly
+selected buyer purchases a roller and a can of paint. What is the probability that the paint is latex?
+2.102
+Denote by A, B, and C the events that a grand prize is behind doors A, B, and C, respectively.
+Suppose you randomly picked a door, say A. The game host opened a door, say B, and showed there
+was no prize behind it. Now the host offers you the option of either staying at the door that you
+picked (A) or switching to the remaining unopened door (C). Use probability to explain whether you
+should switch or not.
+2.103
+A truth serum has the property that 90% of the guilty suspects are properly judged while, of course,
+10% of the guilty suspects are improperly found innocent. On the other hand, innocent suspects
+are misjudged 1% of the time. If the suspect was selected from a group of suspects of which only
+5% have ever committed a crime, and the serum indicates that he is guilty, what is the probability
+that he is innocent?
+2.104
+An allergist claims that 50% of the patients she tests are allergic to some type of weed. What is the
+probability that:
+(a) exactly 3 of her next 4 patients are allergic to weeds?
+(b) none of her next 4 patients is allergic to weeds?
+2.105
+By comparing appropriate regions of Venn diagrams, verify that:
+(a) (𝐴 ∩ 𝐵) ∪ (𝐴 ∩ 𝐵
+′
+) = 𝐴
+(b) 𝐴
+′ ∩ (𝐵
+′ ∪ 𝐶) = (𝐴
+′ ∩ 𝐵
+′
+) ∪ (𝐴
+′ ∩ 𝐶)
+MB Questions 3.1-3.24, 3.28
+3.1
+A computer virus is trying to corrupt two files. The first file will be corrupted with probability 0.4.
+Independently of it, the second file will be corrupted with probability 0.3.
+(a) Compute the probability mass function (pmf) of X, the number of corrupted files.
+(b) Draw a graph of its cumulative distribution function (cdf).
+3.2
+Every day, the number of network blackouts has a distribution (probability mass function):
+x 0 1 2
+P(x) 0.7 0.2 0.1
+A small internet trading company estimates that each network blackout results in a $500 loss.
+Compute expectation and variance of this company’s daily loss due to blackouts.
+3.3
+There is one error in one of five blocks of a program. To find the error, we test three randomly
+selected blocks. Let X be the number of errors in these three blocks. Compute E(X) and Var(X).
+3.4
+Tossing a fair die is an experiment that can result in any integer number from 1 to 6 with equal
+probabilities. Let X be the number of dots on the top face of a die. Compute E(X) and Var(X).
+3.5
+A software package consists of 12 programs, five of which must be upgraded. If 4 programs are
+randomly chosen for testing:
+(a) What is the probability that at least two of them must be upgraded?
+(b) What is the expected number of programs, out of the chosen four, that must be upgraded?
+3.6
+A computer program contains one error. In order to find the error, we split the program into 6 blocks
+and test two of them, selected at random. Let X be the number of errors in these blocks. Compute
+E(X).
+3.7
+The number of home runs scored by a certain team in one baseball game is a random variable with
+the distribution:
+x 0 1 2
+P(x) 0.4 0.4 0.2
+The team plays 2 games. The number of home runs scored in one game is independent of the
+number of home runs in the other game. Let Y be the total number of home runs. Find E(Y) and
+Var(Y).
+3.8
+A computer user tries to recall her password. She knows it can be one of 4 possible passwords. She
+tries her passwords until she finds the right one. Let X be the number of wrong passwords she uses
+before she finds the right one. Find E(X) and Var(X).
+3.9
+It takes an average of 40 seconds to download a certain file, with a standard deviation of 5 seconds.
+The actual distribution of the download time is unknown. Using Chebyshev’s inequality, what can
+be said about the probability of spending more than 1 minute for this download?
+3.10
+Every day, the number of traffic accidents has the probability mass function:
+x 0 1 2 more than 2
+P(x) 0.6 0.2 0.2 0
+independently of other days. What is the probability that there are more accidents on Friday than on
+Thursday?
+3.11
+Two dice are tossed. Let X be the smaller number of points. Let Y be the larger number of points. If
+both dice show the same number, say z points, then X = Y = z.
+(a) Find the joint probability mass function of (X, Y).
+(b) Are X and Y independent? Explain.
+(c) Find the probability mass function of X.
+(d) If X = 2, what is the probability that Y = 5?
+3.12
+Two random variables, X and Y, have the joint distribution P(x, y):
+y \ x 0 1
+0 0.5 0.2
+1 0.2 0.1
+(a) Are X and Y independent? Explain.
+(b) Are (X + Y) and (X − Y) independent? Explain.
+3.13
+Two random variables X and Y have the joint distribution:
+P(0,0) = 0.2, P(0,2) = 0.3, P(1,1) = 0.1, P(2,0) = 0.3, P(2,2) = 0.1, and P(x,y) = 0 for all other pairs (x,y).
+(a) Find the probability mass function of Z = X + Y.
+(b) Find the probability mass function of U = X − Y.
+(c) Find the probability mass function of V = XY.
+3.14
+An internet service provider charges its customers for the time of internet use rounding it up to the
+nearest hour. The joint distribution of the used time (X, hours) and the charge per hour (Y, cents) is
+given below:
+y \ x 0 1 2 y \ x
+0 0.52 0.20 0.04 0
+1 0.14 0.02 0.01 1
+2 0.06 0.01 0 2
+Each customer is charged Z = X · Y cents. Find the distribution of Z.
+3.15
+Let X and Y be the number of hardware failures in two computer labs in a given month. The joint
+distribution is:
+y \ x 0 1 2
+0 0.52 0.20 0.04
+1 0.14 0.02 0.01
+y \ x 0 1 2
+2 0.06 0.01 0
+(a) Compute the probability of at least one hardware failure.
+(b) Are X and Y independent? Why or why not?
+3.16
+The number of hardware failures, X, and software failures, Y, have joint distribution:
+P(0,0)=0.6, P(0,1)=0.1, P(1,0)=0.1, P(1,1)=0.2.
+(a) Are X and Y independent?
+(b) Compute E(X + Y).
+3.17
+Shares of company A are sold at $10 per share. Shares of company B are sold at $50 per share.
+Each share can gain $1 with probability 0.5 or lose $1 with probability 0.5 independently.
+Which portfolio has lowest risk?
+(a) 100 shares of A
+(b) 50 shares of A + 10 shares of B
+(c) 40 shares of A + 12 shares of B
+3.18
+Shares of company A cost $10 per share and give profit X%. Shares of company B cost $50 per
+share and give profit Y%.
+X: P(X = −3)=0.3, P(X = 0)=0.2, P(X = 3)=0.5
+Y: P(Y = −3)=0.4, P(Y = 3)=0.6
+Compute expectations and variances of total dollar profit for:
+(a) 100 shares of A
+(b) 50 shares of A and 10 shares of B
+(c) 20 shares of B
+Find least and most risky portfolios.
+3.19
+A and B are two competing companies.
+X (profit per share of A): P(X=2)=0.5, P(X=−2)=0.5
+Y (profit per share of B): P(Y=4)=0.2, P(Y=−1)=0.8
+Compute expected value and variance for:
+(a) 100 shares of A
+(b) 100 shares of B
+(c) 50 shares of A and 50 shares of B
+3.20
+A quality control engineer tests computers. 5% are defective, independently.
+(a) Find probability of exactly 3 defective computers in 20.
+(b) Find probability that at least 5 tests are needed to find 2 defective ones.
+3.21
+A lab network of 20 computers is attacked by a virus. Each computer is infected with probability 0.4
+independently. Find probability that at least 10 computers are infected.
+3.22
+5% of computer parts are defective. What is the probability that a sample of 16 contains more than
+3 defective ones?
+3.23
+Each day, a lecture may be canceled with probability 0.05 independently.
+(a) Probability at least 4 cancellations in 15 classes.
+(b) Probability the 10th class is the 3rd cancellation.
+3.24
+A search engine checks websites; 20% contain a keyword.
+(a) Probability at least 5 of first 10 contain keyword.
+(b) Probability at least 5 sites are visited before first keyword appears.
+3.28
+Messages arrive at an electronic message center at random times, with an average of 9 messages
+per hour. (a) What is the probability of receiving at least five messages during the next hour? (b)
+What is the probability of receiving exactly five messages during the next hour?
+WP Questions 5.4-5.20, 5.25-5.28, 5.56-
+5.58,5.67,5.71
+5.4
+In a certain city district, the need for money to buy drugs is stated as the reason for 75% of all
+thefts. Find the probability that among the next 5 theft cases reported in this district:
+(a) exactly 2 resulted from the need for money to buy drugs;
+(b) at most 3 resulted from the need for money to buy drugs.
+5.5
+The probability that a pipework failure is due to operator error is 0.30.
+(a) What is the probability that out of the next 20 pipework failures at least 10 are due to operator
+error?
+(b) What is the probability that no more than 4 out of 20 such failures are due to operator error?
+(c) Suppose, for a particular plant, that out of a random sample of 20 such failures, exactly 5 are
+due to operator error. Do you feel that the 30% figure stated above applies to this plant? Comment.
+5.6
+According to a survey by the Administrative Management Society, one-half of U.S. companies give
+employees 4 weeks of vacation after they have been with the company for 15 years. Find the
+probability that among 6 companies surveyed at random, the number that give employees 4 weeks
+of vacation after 15 years of employment is:
+(a) anywhere from 2 to 5;
+(b) fewer than 3.
+5.7
+One prominent physician claims that 70% of those with lung cancer are chain smokers. If his
+assertion is correct:
+(a) find the probability that of 10 such patients recently admitted to a hospital, fewer than half are
+chain smokers;
+(b) find the probability that of 20 such patients recently admitted to a hospital, fewer than half are
+chain smokers.
+5.8
+According to a study published by a group of University of Massachusetts sociologists,
+approximately 60% of the Valium users in the state of Massachusetts first took Valium for
+psychological problems. Find the probability that among the next 8 users from this state who are
+interviewed:
+(a) exactly 3 began taking Valium for psychological problems;
+(b) at least 5 began taking Valium for problems that were not psychological.
+5.9
+In testing a certain kind of truck tire over rugged terrain, it is found that 25% of the trucks fail to
+complete the test run without a blowout. Of the next 15 trucks tested, find the probability that:
+(a) from 3 to 6 have blowouts;
+(b) fewer than 4 have blowouts;
+(c) more than 5 have blowouts.
+5.10
+A nationwide survey of college seniors by the University of Michigan revealed that almost 70%
+disapprove of daily pot smoking. If 12 seniors are selected at random and asked their opinion, find
+the probability that the number who disapprove of smoking pot daily is:
+(a) anywhere from 7 to 9;
+(b) at most 5;
+(c) not less than 8.
+5.11
+The probability that a patient recovers from a delicate heart operation is 0.9. What is the probability
+that exactly 5 of the next 7 patients having this operation survive?
+5.12
+A traffic control engineer reports that 75% of the vehicles passing through a checkpoint are from
+within the state. What is the probability that fewer than 4 of the next 9 vehicles are from out of
+state?
+5.13
+A national study that examined attitudes about antidepressants revealed that approximately 70% of
+respondents believe “antidepressants do not really cure anything, they just cover up the real
+trouble.” According to this study, what is the probability that at least 3 of the next 5 people selected
+at random will hold this opinion?
+5.14
+The percentage of wins for the Chicago Bulls basketball team going into the playoffs for the 1996–
+97 season was 87.7. Round the 87.7 to 90 in order to use Table A.1.
+(a) What is the probability that the Bulls sweep (4–0) the initial best-of-7 playoff series?
+(b) What is the probability that the Bulls win the initial best-of-7 playoff series?
+(c) What very important assumption is made in answering parts (a) and (b)?
+5.15
+It is known that 60% of mice inoculated with a serum are protected from a certain disease. If 5 mice
+are inoculated, find the probability that:
+(a) none contracts the disease;
+(b) fewer than 2 contract the disease;
+(c) more than 3 contract the disease.
+5.16
+Suppose that airplane engines operate independently and fail with probability equal to 0.4.
+Assuming that a plane makes a safe flight if at least one-half of its engines run, determine whether
+a 4-engine plane or a 2-engine plane has the higher probability for a successful flight.
+5.17
+If X represents the number of people in Exercise 5.13 who believe that antidepressants do not cure
+but only cover up the real problem, find the mean and variance of X when 5 people are selected at
+random.
+5.18
+(a) In Exercise 5.9, how many of the 15 trucks would you expect to have blowouts?
+(b) What is the variance of the number of blowouts experienced by the 15 trucks? What does that
+mean?
+5.19
+As a student drives to school, he encounters a traffic signal. This traffic signal stays green for 35
+seconds, yellow for 5 seconds, and red for 60 seconds. Assume that the student goes to school
+each weekday between 8:00 and 8:30 a.m. Let X1 be the number of times he encounters a green
+light, X2 be the number of times he encounters a yellow light, and X3 be the number of times he
+encounters a red light. Find the joint distribution of X1, X2, and X3.
+5.20
+According to USA Today (March 18, 1997), of 4 million workers in the general workforce, 5.8% tested
+positive for drugs. Of those testing positive, 22.5% were cocaine users and 54.4% marijuana users.
+(a) What is the probability that of 10 workers testing positive, 2 are cocaine users, 5 are marijuana
+users, and 3 are users of other drugs?
+(b) What is the probability that of 10 workers testing positive, all are marijuana users?
+(c) What is the probability that of 10 workers testing positive, none is a cocaine user?
+5.25
+Suppose that for a very large shipment of integrated-circuit chips, the probability of failure for any
+one chip is 0.10. Assuming that the assumptions underlying the binomial distributions are met, find
+the probability that at most 3 chips fail in a random sample of 20.
+5.26
+Assuming that 6 in 10 automobile accidents are due mainly to a speed violation, find the probability
+that among 8 automobile accidents, 6 will be due mainly to a speed violation:
+(a) by using the formula for the binomial distribution;
+(b) by using Table A.1.
+5.27
+If the probability that a fluorescent light has a useful life of at least 800 hours is 0.9, find the
+probabilities that among 20 such lights:
+(a) exactly 18 will have a useful life of at least 800 hours;
+(b) at least 15 will have a useful life of at least 800 hours;
+(c) at least 2 will not have a useful life of at least 800 hours.
+5.28
+A manufacturer knows that on average 20% of the electric toasters produced require repairs within
+1 year after they are sold. When 20 toasters are randomly selected, find appropriate numbers x and
+y such that:
+(a) the probability that at least x of them will require repairs is less than 0.5;
+(b) the probability that at least y of them will not require repairs is greater than 0.8.
+5.56
+At a certain intersection, the number of accidents follows a Poisson model. What is the probability
+that in any given month at this intersection:
+(a) exactly 5 accidents will occur?
+(b) fewer than 3 accidents will occur?
+(c) at least 2 accidents will occur?
+5.57
+On average, a textbook author makes two word processing errors per page on the first draft of her
+textbook. What is the probability that on the next page she will make:
+(a) 4 or more errors?
+(b) no errors?
+5.58
+A certain area of the eastern United States is, on average, hit by 6 hurricanes a year. Find the
+probability that in a given year that area will be hit by:
+(a) fewer than 4 hurricanes;
+(b) anywhere from 6 to 8 hurricanes.
+5.67
+The number of customers arriving per hour at a certain automobile service facility is assumed to
+follow a Poisson distribution with mean λ =7. (a) Compute the probability that more than 10 cus
+tomers will arrive in a 2-hour period. (b) What is the mean number of arrivals during a 2-hour
+period?
+5.71
+For a certain type of copper wire, it is known that, on the average, 1.5 flaws occur per millimeter.
+Assuming that the number of flaws is a Poisson random variable, what is the probability that no
+flaws occur in a certain portion of wire of length 5 millimeters? What is the mean number of flaws in
+a portion of length 5 millimeters?
+MB Questions 4.1-4.5,4.16-4.26
+4.1.
+The lifetime, in years, of some electronic component is a continuous random variable with the
+density
+f(x) = { k / x^4 for x ≥ 1
+ { 0 for x < 1.
+Find k, the cumulative distribution function, and the probability for the lifetime to exceed 2 years.
+4.2.
+The time, in minutes, it takes to reboot a certain system is a continuous variable with the density
+f(x) = { C(10 - x)^2, if 0 < x < 10
+ { 0, otherwise
+(a) Compute C.
+(b) Compute the probability that it takes between 1 and 2 minutes to reboot.
+4.3.
+The installation time, in hours, for a certain software module has a probability density function f(x) =
+k(1 - x^3) for 0 < x < 1. Find k and compute the probability that it takes less than 1/2 hour to install
+this module.
+4.4.
+Lifetime of a certain hardware is a continuous random variable with density
+f(x) = { K - x/50 for 0 < x < 10 years
+ { 0 for all other x
+(a) Find K.
+(b) What is the probability of a failure within the first 5 years?
+(c) What is the expectation of the lifetime?
+4.5
+Two continuous random variables X and Y have the joint density
+f(x,y) = C(x² + y), −1 ≤ x ≤ 1, 0 ≤ y ≤ 1
+(a) Compute the constant C.
+(b) Find the marginal densities of X and Y. Are these two variables independent?
+(c) Compute probabilities P{Y < 0.6} and P{Y < 0.6 | X < 0.5}
+4.16
+Let Z be a Standard Normal random variable. Compute:
+(a) P(Z < 1.25)
+(b) P(Z ≤ 1.25)
+(c) P(Z > 1.25)
+(d) P(|Z| ≤ 1.25)
+(e) P(Z < 6.0)
+(f) P(Z > 6.0)
+(g) With probability 0.8, variable Z does not exceed what value?
+4.17
+For a Standard Normal random variable Z, compute:
+(a) P(Z ≥ 0.99)
+(b) P(Z ≤ −0.99)
+(c) P(Z < 0.99)
+(d) P(|Z| > 0.99)
+(e) P(Z < 10.0)
+(f) P(Z > 10.0)
+(g) With probability 0.9, variable Z is less than what?
+4.18
+For a Normal random variable X with E(X) = −3 and Var(X) = 4, compute:
+(a) P(X ≤ 2.39)
+(b) P(Z ≥ −2.39)
+(c) P(|X| ≥ 2.39)
+(d) P(|X + 3| ≥ 2.39)
+(e) P(X < 5)
+(f) P(|X| < 5)
+(g) With probability 0.33, variable X exceeds what value?
+4.19
+According to one of the Western Electric rules for quality control, a produced item is considered
+conforming if its measurement falls within three standard deviations from the target value. Suppose
+that the process is in control so that the expected value of each measurement equals the target
+value. What percent of items will be considered conforming, if the distribution of measurements is:
+(a) Normal(μ, σ)?
+(b) Uniform(a, b)?
+4.20
+Refer to Exercise 4.19. What percent of items falls beyond 1.5 standard deviations from the mean, if
+the distribution of measurements is:
+(a) Normal(μ, σ)?
+(b) Uniform(a, b)?
+4.21
+The average height of professional basketball players is around 6 feet 7 inches, and the standard
+deviation is 3.89 inches. Assuming Normal distribution of heights within this group:
+(a) What percent of professional basketball players are taller than 7 feet?
+(b) If your favorite player is within the tallest 20% of all players, what can his height be?
+4.22
+Refer to the country in Example 4.11 on p. 91, where household incomes follow Normal distribution
+with μ = 900 coins and σ = 200 coins:
+(a) A recent economic reform made households with income below 640 coins qualify for a free
+bottle of milk at every breakfast. What portion of the population qualifies for a free bottle of milk?
+(b) Moreover, households with an income within the lowest 5% of the population are entitled to a
+free sandwich. What income qualifies a household to receive free sandwiches?
+4.23
+The lifetime of a certain electronic component is a random variable with the expectation of 5000
+hours and a standard deviation of 100 hours. What is the probability that the average lifetime of 400
+components is less than 5012 hours?
+4.24
+Installation of some software package requires downloading 82 files. On the average, it takes 15 sec
+to download one file, with a variance of 16 sec². What is the probability that the software is installed
+in less than 20 minutes?
+4.25
+Among all the computer chips produced by a certain factory, 6 percent are defective. A sample of
+400 chips is selected for inspection.
+(a) What is the probability that this sample contains between 20 and 25 defective chips (including
+20 and 25)?
+(b) Suppose that each of 40 inspectors collects a sample of 400 chips. What is the probability that
+at least 8 inspectors will find between 20 and 25 defective chips in their samples?
+4.26
+An average scanned image occupies 0.6 megabytes of memory with a standard deviation of 0.4
+megabytes. If you plan to publish 80 images on your web site, what is the probability that their total
+size is between 47 megabytes and 50 megabytes?
+WP Questions 6.3-6.9
+6.3
+The daily amount of coffee, in liters, dispensed by a machine located in an airport lobby is a random
+variable X having a continuous uniform distribution with A = 7 and B = 10. Find the probability that
+on a given day the amount of coffee dispensed by this machine will be:
+(a) at most 8.8 liters;
+(b) more than 7.4 liters but less than 9.5 liters;
+(c) at least 8.5 liters.
+6.4
+A bus arrives every 10 minutes at a bus stop. It is assumed that the waiting time for a particular
+individual is a random variable with a continuous uniform distribution.
+(a) What is the probability that the individual waits more than 7 minutes?
+(b) What is the probability that the individual waits between 2 and 7 minutes?
+6.5
+Given a standard normal distribution, find the area under the curve that lies:
+(a) to the left of z = −1.39;
+(b) to the right of z = 1.96;
+(c) between z = −2.16 and z = −0.65;
+(d) to the left of z = 1.43;
+(e) to the right of z = −0.89;
+(f) between z = −0.48 and z = 1.74.
+6.6
+Find the value of z if the area under a standard normal curve:
+(a) to the right of z is 0.3622;
+(b) to the left of z is 0.1131;
+(c) between 0 and z, with z > 0, is 0.4838;
+(d) between −z and z, with z > 0, is 0.9500.
+6.7
+Given a standard normal distribution, find the value of k such that:
+(a) P(Z > k) = 0.2946;
+(b) P(Z < k) = 0.0427;
+(c) P(−0.93 < Z < k) = 0.7235.
+6.8
+Given a normal distribution with μ = 30 and σ = 6, find:
+(a) the normal curve area to the right of x = 17;
+(b) the normal curve area to the left of x = 22;
+(c) the normal curve area between x = 32 and x = 41;
+(d) the value of x that has 80% of the normal curve area to the left;
+(e) the two values of x that contain the middle 75% of the normal curve area.
+6.9
+Given the normally distributed variable X with mean 18 and standard deviation 2.5, find:
+(a) P(X < 15);
+(b) the value of k such that P(X < k) = 0.2236;
+(c) the value of k such that P(X > k) = 0.1814;
+(d) P(17 < X < 21).
+WP Questions 9.1-9.5, 9.9- 9.13
+9.1
+A UCLA researcher claims that the life span of mice can be extended by as much as 25% when the
+calories in their diet are reduced by approximately 40% from the time they are weaned. The
+restricted diet is enriched to normal levels by vitamins and protein. Assuming that it is known from
+previous studies that σ = 5.8 months, how many mice should be included in our sample if we wish
+to be 99% confident that the mean life span of the sample will be within 2 months of the population
+mean for all mice subjected to this reduced diet?
+9.2
+An electrical firm manufactures light bulbs that have a length of life that is approximately normally
+distributed with a standard deviation of 40 hours. If a sample of 30 bulbs has an average life of 780
+hours, find a 96% confidence interval for the population mean of all bulbs produced by this firm.
+9.3
+Many cardiac patients wear an implanted pacemaker to control their heartbeat. A plastic connector
+module mounts on the top of the pacemaker. Assuming a standard deviation of 0.0015 inch and an
+approximately normal distribution, find a 95% confidence interval for the mean of the depths of all
+connector modules made by a certain manufacturing company. A random sample of 75 modules
+has an average depth of 0.310 inch.
+9.4
+The heights of a random sample of 50 college students showed a mean of 174.5 centimeters and a
+standard deviation of 6.9 centimeters.
+(a) Construct a 98% confidence interval for the mean height of all college students.
+(b) What can we assert with 98% confidence about the possible size of our error if we estimate the
+mean height of all college students to be 174.5 centimeters?
+9.5
+A random sample of 100 automobile owners in the state of Virginia shows that an automobile is
+driven on average 23,500 kilometers per year with a standard deviation of 3900 kilometers. Assume
+the distribution of measurements to be approximately normal.
+(a) Construct a 99% confidence interval for the average number of kilometers an automobile is
+driven annually in Virginia.
+(b) What can we assert with 99% confidence about the possible size of our error if we estimate the
+average number of kilometers driven by car owners in Virginia to be 23,500 kilometers per year?
+9.9
+Regular consumption of presweetened cereals contributes to tooth decay, heart disease, and other
+degenerative diseases, according to studies conducted by Dr. W. H. Bowen of the National Institute
+of Health and Dr. J. Yudben, Professor of Nutrition and Dietetics at the University of London. In a
+random sample consisting of 20 similar single servings of Alpha-Bits, the average sugar content
+was 11.3 grams with a standard deviation of 2.45 grams. Assuming that the sugar contents are
+normally distributed, construct a 95% confidence interval for the mean sugar content for single
+servings of Alpha-Bits.
+9.10
+A random sample of 12 graduates of a certain secretarial school typed an average of 79.3 words per
+minute with a standard deviation of 7.8 words per minute. Assuming a normal distribution for the
+number of words typed per minute, find a 95% confidence interval for the average number of words
+typed by all graduates of this school.
+9.11
+A machine produces metal pieces that are cylindrical in shape. A sample of pieces is taken, and the
+diameters are found to be 1.01, 0.97, 1.03, 1.04, 0.99, 0.98, 0.99, 1.01, and 1.03 centimeters. Find a
+99% confidence interval for the mean diameter of pieces from this machine, assuming an
+approximately normal distribution.
+9.12
+A random sample of 10 chocolate energy bars of a certain brand has, on average, 230 calories per
+bar, with a standard deviation of 15 calories. Construct a 99% confidence interval for the true mean
+calorie content of this brand of energy bar. Assume that the distribution of the calorie content is
+approximately normal.
+9.13
+A random sample of 12 shearing pins is taken in a study of the Rockwell hardness of the pin head.
+Measurements on the Rockwell hardness are made for each of the 12, yielding an average value of
+48.50 with a sample standard deviation of 1.5. Assuming the measurements to be normally
+distributed, construct a 90% confidence interval for the mean Rockwell hardness.
+WP Questions 10.19-10.46
+10.19
+In a research report, Richard H. Weindruch of the UCLA Medical School claims that mice with an
+average life span of 32 months will live to be about 40 months old when 40% of the calories in their
+diet are replaced by vitamins and protein. Is there any reason to believe that μ < 40 if 64 mice that
+are placed on this diet have an average life of 38 months with a standard deviation of 5.8 months?
+Use a P-value in your conclusion.
+10.20
+A random sample of 64 bags of white cheddar popcorn weighed, on average, 5.23 ounces with a
+standard deviation of 0.24 ounce. Test the hypothesis that μ = 5.5 ounces against the alternative
+hypothesis, μ < 5.5 ounces, at the 0.05 level of significance.
+10.21
+An electrical firm manufactures light bulbs that have a lifetime that is approximately normally
+distributed with a mean of 800 hours and a standard deviation of 40 hours. Test the hypothesis that
+μ = 800 hours against the alternative, μ ≠ 800 hours, if a random sample of 30 bulbs has an average
+life of 788 hours. Use a P-value in your answer.
+10.22
+In the American Heart Association journal Hypertension, researchers report that individuals who
+practice Transcendental Meditation (TM) lower their blood pressure significantly. If a random
+sample of 225 male TM practitioners meditate for 8.5 hours per week with a standard deviation of
+2.25 hours, does this suggest that, on average, men who use TM meditate more than 8 hours per
+week? Quote a P-value in your conclusion.
+10.23
+Test the hypothesis that the average content of containers of a particular lubricant is 10 liters if the
+contents of a random sample of 10 containers are 10.2, 9.7, 10.1, 10.3, 10.1, 9.8, 9.9, 10.4, 10.3,
+and 9.8 liters. Use a 0.01 level of significance and assume that the distribution of contents is
+normal.
+10.24
+The average height of females in the freshman class of a certain college has historically been 162.5
+centimeters with a standard deviation of 6.9 centimeters. Is there reason to believe that there has
+been a change in the average height if a random sample of 50 females in the present freshman
+class has an average height of 165.2 centimeters? Use a P-value in your conclusion. Assume the
+standard deviation remains the same.
+10.25
+It is claimed that automobiles are driven on average more than 20,000 kilometers per year. To test
+this claim, 100 randomly selected automobile owners are asked to keep a record of the kilometers
+they travel. Would you agree with this claim if the random sample showed an average of 23,500
+kilometers and a standard deviation of 3900 kilometers? Use a P-value in your conclusion.
+10.26
+According to a dietary study, high sodium intake may be related to ulcers, stomach cancer, and
+migraine headaches. The human requirement for salt is only 220 milligrams per day, which is
+surpassed in most single servings of ready-to-eat cereals. If a random sample of 20 similar servings
+of a certain cereal has a mean sodium content of 244 milligrams and a standard deviation of 24.5
+milligrams, does this suggest at the 0.05 level of significance that the average sodium content for a
+single serving of such cereal is greater than 220 milligrams? Assume the distribution of sodium
+contents to be normal.
+10.27
+A study at the University of Colorado at Boulder shows that running increases the percent resting
+metabolic rate (RMR) in older women. The average RMR of 30 elderly women runners was 34.0%
+higher than the average RMR of 30 sedentary elderly women, and the standard deviations were
+reported to be 10.5 and 10.2%, respectively. Was there a significant increase in RMR of the women
+runners over the sedentary women? Assume the populations to be approximately normally
+distributed with equal variances. Use a P-value in your conclusions.
+10.28
+According to Chemical Engineering, an important property of fiber is its water absorbency. The
+average percent absorbency of 25 randomly selected pieces of cotton fiber was found to be 20 with
+a standard deviation of 1.5. A random sample of 25 pieces of acetate yielded an average percent of
+12 with a standard deviation of 1.25. Is there strong evidence that the population mean percent
+absorbency is significantly higher for cotton fiber than for acetate? Assume that the percent
+absorbency is approximately normally distributed and that the population variances in percent
+absorbency for the two fibers are the same. Use a significance level of 0.05.
+10.29
+Past experience indicates that the time required for high school seniors to complete a standardized
+test is a normal random variable with a mean of 35 minutes. If a random sample of 20 high school
+seniors took an average of 33.1 minutes to complete this test with a standard deviation of 4.3
+minutes, test the hypothesis, at the 0.05 level of significance, that μ = 35 minutes against the
+alternative that μ < 35 minutes.
+10.30
+A random sample of size n₁ = 25, taken from a normal population with a standard deviation σ₁ = 5.2,
+has a mean x̄ ₁ = 81. A second random sample of size n₂ = 36, taken from a different normal
+population with a standard deviation σ₂ = 3.4, has a mean x̄ ₂ = 76. Test the hypothesis that μ₁ = μ₂
+against the alternative, μ₁ ≠ μ₂. Quote a P-value in your conclusion.
+10.31
+A manufacturer claims that the average tensile strength of thread A exceeds the average tensile
+strength of thread B by at least 12 kilograms. To test this claim, 50 pieces of each type of thread
+were tested under similar conditions. Type A thread had an average tensile strength of 86.7
+kilograms with a standard deviation of 6.28 kilograms, while type B thread had an average tensile
+strength of 77.8 kilograms with a standard deviation of 5.61 kilograms. Test the manufacturer’s
+claim using a 0.05 level of significance.
+10.32
+Amstat News (December 2004) lists median salaries for associate professors of statistics at
+research institutions and at liberal arts and other institutions in the United States. Assume that a
+sample of 200 associate professors from research institutions has an average salary of $70,750 per
+year with a standard deviation of $6000. Assume also that a sample of 200 associate professors
+from other types of institutions has an average salary of $65,200 with a standard deviation of
+$5000. Test the hypothesis that the mean salary for associate professors in research institutions is
+$2000 higher than for those in other institutions. Use a 0.01 level of significance.
+10.33
+A study was conducted to see if increasing the substrate concentration has an appreciable effect
+on the velocity of a chemical reaction. With a substrate concentration of 1.5 moles per liter, the
+reaction was run 15 times, with an average velocity of 7.5 micromoles per 30 minutes and a
+standard deviation of 1.5. With a substrate concentration of 2.0 moles per liter, 12 runs were made,
+yielding an average velocity of 8.8 micromoles per 30 minutes and a sample standard deviation of
+1.2. Is there any reason to believe that this increase in substrate concentration causes an increase
+in the mean velocity of the reaction of more than 0.5 micromole per 30 minutes? Use a 0.01 level of
+significance and assume the populations to be approximately normally distributed with equal
+variances.
+10.34
+A study was made to determine if the subject matter in a physics course is better understood when
+a lab constitutes part of the course. Students were randomly selected to participate in either a 3-
+semester-hour course without labs or a 4-semester-hour course with labs. In the section with labs,
+11 students made an average grade of 85 with a standard deviation of 4.7, and in the section
+without labs, 17 students made an average grade of 79 with a standard deviation of 6.1. Would you
+say that the laboratory course increases the average grade by as much as 8 points? Use a P-value in
+your conclusion and assume the populations to be approximately normally distributed with equal
+variances.
+10.35
+To find out whether a new serum will arrest leukemia, 9 mice, all with an advanced stage of the
+disease, are selected. Five mice receive the treatment and 4 do not. Survival times, in years, from
+the time the experiment commenced are as follows:
+Treatment 2.1 5.3 1.4 4.6 0.9
+No Treatment 1.9 0.5 2.8 3.1
+At the 0.05 level of significance, can the serum be said to be effective? Assume the two populations
+to be normally distributed with equal variances.
+10.36
+Engineers at a large automobile manufacturing company are trying to decide whether to purchase
+brand A or brand B tires for the company’s new models. To help them arrive at a decision, an
+experiment is conducted using 12 of each brand. The tires are run until they wear out. The results
+are as follows:
+Brand A: x̄ ₁ = 37,900 kilometers, s₁ = 5100 kilometers
+Brand B: x̄ ₂ = 39,800 kilometers, s₂ = 5900 kilometers
+Test the hypothesis that there is no difference in the average wear of the two brands of tires.
+Assume the populations to be approximately normally distributed with equal variances. Use a Pvalue.
+10.37
+In Exercise 9.42 on page 295, use the t distribution to test the hypothesis that the fuel economy of
+Volkswagen mini-trucks, on average, exceeds that of similarly equipped Toyota mini-trucks by 4
+kilometers per liter. Use a 0.10 level of significance.
+10.38
+A UCLA researcher claims that the average life span of mice can be extended by as much as 8
+months when the calories in their diet are reduced by approximately 40% from the time they are
+weaned. The restricted diets are enriched to normal levels by vitamins and protein. Suppose that a
+random sample of 10 mice is fed a normal diet and has an average life span of 32.1 months with a
+standard deviation of 3.2 months, while a random sample of 15 mice is fed the restricted diet and
+has an average life span of 37.6 months with a standard deviation of 2.8 months. Test the
+hypothesis, at the 0.05 level of significance, that the average life span of mice on this restricted diet
+is increased by 8 months against the alternative that the increase is less than 8 months. Assume
+the distributions of life spans for the regular and restricted diets are approximately normal with
+equal variances.
+10.39
+The following data represent the running times of films produced by two motion-picture
+companies:
+Company 1: 102, 86, 98, 109, 92
+Company 2: 81, 165, 97, 134, 92, 87, 114
+Test the hypothesis that the average running time of films produced by company 2 exceeds the
+average running time of films produced by company 1 by 10 minutes against the one-sided
+alternative that the difference is less than 10 minutes. Use a 0.1 level of significance and assume
+the distributions of times to be approximately normal with unequal variances.
+
+10.46
+In Review Exercise 9.91 on page 313, use the t distribution to test the hypothesis that the diet
+reduces a woman’s weight by 4.5 kilograms on average against the alternative hypothesis that the
+mean difference in weight is less than 4.5 kilograms. Use a P-value.
+WP Questions 11.1-11.9, 11.11-11.14,11.5(a, b),
+11.43,11.44,11.46
+Questions 11.17-11.22 Questions 13.1-13.7
+11.1
+A study was conducted at Virginia Tech to determine if certain static arm-strength measures have
+an influence on the “dynamic lift” characteristic of an individual. Twenty-five individuals were
+subjected to strength tests and then were asked to perform a weight lifting test in which weight was
+dynamically lifted over head. The data are given here.
+Arm Strength, x
+17.3, 19.3, 19.5, 19.7, 22.9, 23.1, 26.4, 26.8, 27.6, 28.1, 28.2, 28.7,
+29.0, 29.6, 29.9, 29.9, 30.3, 31.3, 36.0, 39.5, 40.4, 44.3, 44.6, 50.4, 55.9
+Dynamic Lift, y
+71.7, 48.3, 88.3, 75.0, 91.7, 100.0, 73.3, 65.0, 75.0, 88.3, 68.3, 96.7,
+76.7, 78.3, 60.0, 71.7, 85.0, 85.0, 88.3, 100.0, 100.0, 91.7, 100.0, 71.7
+(a) Estimate β₀ and β₁ for the linear regression curve μY|x = β₀ + β₁x.
+(b) Find a point estimate of μY|30.
+(c) Plot the residuals versus the x’s (arm strength). Comment.
+11.2
+The grades of a class of 9 students on a midterm report (x) and on the final examination (y) are as
+follows:
+x: 77, 50, 71, 72, 81, 94, 96, 99, 67
+y: 82, 66, 78, 34, 47, 85, 99, 99, 68
+(a) Estimate the linear regression line.
+(b) Estimate the final examination grade of a student who received a grade of 85 on the midterm
+report.
+11.3
+The amounts of a chemical compound y that dissolved in 100 grams of water at various
+temperatures x were recorded as follows:
+x(°C): 0, 15, 30, 45, 60, 75
+y(grams):
+8, 12, 25, 31, 44, 48
+6, 10, 21, 33, 39, 51
+8, 14, 24, 28, 42, 44
+(a) Find the equation of the regression line.
+(b) Graph the line on a scatter diagram.
+(c) Estimate the amount of chemical that will dissolve in 100 grams of water at 50°C.
+11.4
+The following data were collected to determine the relationship between pressure and the
+corresponding scale reading for the purpose of calibration.
+Pressure, x (lb/sq in.): 10, 10, 10, 10, 10, 50, 50, 50, 50, 50
+Scale Reading, y: 13, 18, 16, 15, 20, 86, 90, 88, 88, 92
+(a) Find the equation of the regression line.
+(b) The purpose of calibration in this application is to estimate pressure from an observed scale
+reading. Estimate the pressure for a scale reading of 54 using
+x̂ = (54 − b₀)/b₁.
+11.5
+A study was made on the amount of converted sugar in a certain process at various temperatures.
+The data were coded and recorded as follows:
+Temperature, x | Converted Sugar, y
+1.0 | 8.1
+1.1 | 7.8
+1.2 | 8.5
+1.3 | 9.8
+1.4 | 9.5
+1.5 | 8.9
+1.6 | 8.6
+1.7 | 10.2
+1.8 | 9.3
+1.9 | 9.2
+2.0 | 10.5
+(a) Estimate the linear regression line.
+(b) Estimate the mean amount of converted sugar produced when the coded temperature is 1.75.
+11.6
+In a certain type of metal test specimen, the normal stress on a specimen is known to be
+functionally related to the shear resistance. The following is a set of coded experimental data:
+Normal Stress, x | Shear Resistance, y
+26.8 | 26.5
+25.4 | 27.3
+28.9 | 24.2
+23.6 | 27.1
+27.7 | 23.6
+23.9 | 25.9
+24.7 | 26.3
+28.1 | 22.5
+26.9 | 21.7
+27.4 | 21.4
+22.6 | 25.8
+25.6 | 24.9
+(a) Estimate the regression line μY|x = β₀ + β₁x.
+(b) Estimate the shear resistance for a normal stress of 24.5.
+11.7
+The following is a portion of a classic dataset called the “pilot plot data” in Fitting Equations to Data
+by Daniel and Wood, published in 1971. The response y is the acid content of material produced by
+titration, whereas the regressor x is the organic acid content produced by extraction and weighing.
+y x y x
+76 37
+62 82
+66 88
+58 43
+88 109
+123 48
+55 138
+100 164
+75 28
+159 70
+(a) Plot the data; does it appear that a simple linear regression will be a suitable model?
+(b) Fit a simple linear regression; estimate slope and intercept.
+(c) Graph the regression line on the plot in (a).
+11.8
+A mathematics placement test is given to all entering freshmen at a small college. A student who
+receives a grade below 35 is denied admission to the regular mathematics course and placed in a
+remedial class. The placement test scores and the final grades for 20 students who took the regular
+course were recorded.
+Placement Test | Course Grade
+50 | 53
+35 | 41
+35 | 61
+40 | 56
+55 | 68
+65 | 36
+35 | 11
+60 | 70
+90 | 79
+35 | 59
+90 | 54
+80 | 91
+60 | 48
+60 | 71
+60 | 71
+40 | 47
+55 | 53
+50 | 68
+65 | 57
+50 | 79
+(a) Plot a scatter diagram.
+(b) Find the equation of the regression line to predict course grades from placement test scores.
+(c) Graph the line on the scatter diagram.
+(d) If 60 is the minimum passing grade, below which placement test scores should students in the
+future be denied admission to this course?
+11.9
+A study was made by a retail merchant to determine the relation between weekly advertising
+expenditures and sales.
+Advertising Costs ($) | Sales ($)
+40 | 385
+20 | 400
+25 | 395
+20 | 365
+30 | 475
+50 | 440
+40 | 490
+20 | 420
+50 | 560
+40 | 525
+25 | 480
+50 | 510
+(a) Plot a scatter diagram.
+(b) Find the equation of the regression line to predict weekly sales from advertising expenditures.
+(c) Estimate the weekly sales when advertising costs are $35.
+(d) Plot the residuals versus advertising costs. Comment.
+11.11
+The thrust of an engine (y) is a function of exhaust temperature (x) in °F when other important
+variables are held constant. Consider the following data:
+y x y x
+4300 1760 4010 1665
+4650 1652 3810 1550
+3200 1485 4500 1700
+3150 1390 3008 1270
+4950 1820
+(a) Plot the data.
+(b) Fit a simple linear regression to the data and plot the line through the data.
+11.12
+A study was done to study the effect of ambient temperature x on the electric power consumed by a
+chemical plant y. Other factors were held constant, and the data were collected from an
+experimental pilot plant.
+y (BTU) x (°F) y (BTU) x (°F)
+250 27 265 31
+285 45 298 60
+320 72 267 34
+295 58 321 74
+(a) Plot the data.
+(b) Estimate the slope and intercept in a simple linear regression model.
+(c) Predict power consumption for an ambient temperature of 65°F.
+11.13
+A study of the amount of rainfall and the quantity of air pollution removed produced the following
+data:
+Daily Rainfall (x, 0.01 cm) Particulate Removed (y, μg/m³)
+4.3 126
+4.5 121
+5.9 116
+5.6 118
+6.1 114
+5.2 118
+3.8 132
+2.1 141
+7.5 108
+(a) Find the equation of the regression line to predict the particulate removed from the amount of
+daily rainfall.
+(b) Estimate the amount of particulate removed when the daily rainfall is x = 4.8 units.
+11.14
+A professor in the School of Business in a university polled a dozen colleagues about the number of
+professional meetings they attended in the past five years (x) and the number of papers they
+submitted to refereed journals (y) during the same period. The summary data are given as follows:
+n = 12, x̄ = 4, ȳ = 12
+∑xi² = 232
+∑xiyi = 318
+Fit a simple linear regression model between x and y by finding out the estimates of intercept and
+slope. Comment on whether attending more professional meetings would result in publishing more
+papers.
+11.17
+Referring to Exercise 11.5 on page 398:
+(a) Compute 𝑠
+2
+.
+(b) Construct a 95% confidence interval for 𝛽0.
+(c) Construct a 95% confidence interval for 𝛽1.
+11.18
+Referring to Exercise 11.6 on page 399:
+(a) Compute 𝑠
+2
+.
+(b) Construct a 99% confidence interval for 𝛽0.
+(c) Construct a 99% confidence interval for 𝛽1.
+11.19
+Referring to Exercise 11.3 on page 398:
+(a) Compute 𝑠
+2
+.
+(b) Construct a 99% confidence interval for 𝛽0.
+(c) Construct a 99% confidence interval for 𝛽1.
+11.20
+Test the hypothesis 𝛽0 = 10 using Exercise 11.8 on page 399 against the alternative 𝛽0 < 10.
+Use a 0.05 level of significance.
+11.21
+Test the hypothesis 𝛽1 = 6using Exercise 11.9 on page 399 against the alternative 𝛽1 < 6.
+Use a 0.025 level of significance.
+11.22
+Using the value of 𝑠
+2obtained in Exercise 11.16(a), construct a 95% confidence interval for 𝜇𝑌∣85in
+Exercise 11.2 on page 398.
+11.43
+Compute and interpret the correlation coefficient for the following grades of 6 students selected at
+random:
+Mathematics grade 70 92 80 74 65 83
+English grade 74 84 63 87 78 90
+11.44
+With reference to Exercise 11.1 on page 398, assume that x and y are random variables with a
+bivariate normal distribution.
+(a) Calculate r.
+(b) Test the hypothesis that ρ = 0 against the alternative that ρ ≠ 0 at the 0.05 level of significance.
+11.46
+Test the hypothesis that ρ = 0 in Exercise 11.43 against the alternative that ρ ≠ 0. Use a 0.05 level of
+significance.
+13.1
+Six different machines are being considered for use in manufacturing rubber seals. The machines
+are compared based on the tensile strength of the product. A random sample of four seals from
+each machine is taken to determine whether the mean tensile strength differs among machines.
+The tensile strength measurements (kg/cm² × 10⁻¹) are given below:
+Machine 1 2 3 4 5 6
+Values 17.5, 16.9,
+15.8, 18.6
+16.4, 19.2,
+17.7, 15.4
+20.3, 15.7,
+17.8, 18.9
+14.6, 16.7,
+20.8, 18.9
+17.5, 19.2,
+16.5, 20.5
+18.3, 16.2,
+17.5, 20.1
+Perform a one-way ANOVA at the 0.05 level of significance and determine whether there is a
+significant difference in mean tensile strengths among the six machines.
+13.2
+The data below represent the number of hours of relief provided by five different brands of
+headache tablets administered to 25 subjects with fever of 38°C or higher. Perform a one-way
+ANOVA at the 0.05 level of significance to test whether the mean duration of relief is the same for all
+five brands. Discuss the results.
+Tablet A Tablet B Tablet C Tablet D Tablet E
+5.2 9.1 3.2 2.4 7.1
+4.7 7.1 5.8 3.4 6.6
+8.1 8.2 2.2 4.1 9.3
+6.2 6.0 3.1 1.0 4.2
+3.0 9.1 7.2 4.0 7.6
+13.3
+A study titled “Shelf-Space Strategy in Retailing” investigates the effect of shelf height on
+supermarket sales of canned dog food. An experiment was conducted in a small supermarket over
+8 days. Each day, shelf height was randomly changed three times among knee level, waist level,
+and eye level.
+Sales (in hundreds of dollars) of Arf dog food for each shelf height are shown below:
+Knee Level Waist Level Eye Level
+77 88 85
+Knee Level Waist Level Eye Level
+82 94 85
+86 93 87
+78 90 81
+81 91 80
+86 94 79
+77 90 87
+81 87 93
+Using a 0.01 level of significance, determine whether there is a significant difference in mean daily
+sales among shelf heights.
+13.4
+An experiment was conducted to study the knockdown time (time from injection to immobilization)
+of three different immobilizing drugs used on wild white-tailed deer. Thirty male deer were randomly
+assigned to three treatment groups:
+• Group A: 5 mg liquid succinylcholine chloride (SCC)
+• Group B: 8 mg powdered SCC
+• Group C: 200 mg phencyclidine hydrochloride
+Knockdown times (in minutes) are shown below:
+Group A Group B Group C
+11 11 23
+5 10 4
+14 7 11
+7 10 6
+10 4 12
+7 6 4
+Group A Group B Group C
+16 7 3
+7 10 5
+6 8 3
+12 7 7
+Perform a one-way ANOVA at the 0.01 level of significance to determine whether the mean
+knockdown times differ among the three drugs.
+13.5
+A study on the enzyme NADPH:NAD transhydrogenase of the tapeworm Hymenolepiasis diminuta
+examines changes in enzyme activity under different concentrations of NADP. Enzyme specific
+activity (nmol/min/mg protein) was measured under four concentrations:
+NADP Concentration
+(nm) 0 80 160 360
+Values 11.01, 12.09, 10.55,
+11.26, 9.36
+11.38, 10.67,
+12.33, 10.08
+11.02, 10.67,
+11.50, 10.31
+6.04, 8.65,
+7.76, 10.13
+Test at the 0.01 level of significance whether the mean enzyme activity is the same across all four
+concentrations.
+13.6
+A study measures sorption rates of three types of organic solvents used in industrial cleaning
+processes. Independent samples were taken and measured as mole percentage.
+Aromatics Chloroalkanes Esters
+1.06, 0.79, 0.82, 0.89, 1.05 0.95, 0.65, 1.15, 1.12, 0.61 1.58, 1.45, 0.57, 1.16, 0.34
+1.12, 0.91, 0.83, 0.43, 0.60 0.29, 0.06, 0.44, 0.55 0.06, 0.09, 0.17, 0.17
+Determine whether there is a significant difference in mean sorption rates using a P-value
+approach. Which solvent would be preferred?
+13.7
+A study investigates the effect of magnesium ammonium phosphate (MgNH₄PO₄) on the height of
+chrysanthemum plants. Forty seedlings were divided into four groups of ten plants each and
+treated with different concentrations (g/bu):
+50 g/bu 100 g/bu 200 g/bu 400 g/bu
+13.2, 12.8, 13.0, 14.2,
+15.0
+12.4, 17.2, 14.0, 21.6,
+20.0
+16.0, 14.8, 14.0, 14.0,
+22.2
+12.6, 13.0, 23.6, 17.0,
+24.4
+7.8, 20.0, 17.0, 19.6,
+20.2
+14.4, 15.8, 27.0, 18.0,
+23.2
+21.0, 19.1, 18.0, 21.1,
+25.0
+14.8, 15.8, 26.0, 22.0,
+18.2
+At the 0.05 level of significance, determine whether different concentrations affect mean plant
+height. Identify the most effective concentration.
+

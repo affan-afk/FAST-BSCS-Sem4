@@ -1,0 +1,96 @@
+@startuml IntelliFly_Sequence_RunwayAllocation
+
+skinparam backgroundColor #FAFCFF
+skinparam sequence {
+  ParticipantBackgroundColor #EBF2FA
+  ParticipantBorderColor #1F6AA5
+  ParticipantFontColor #1A1A2E
+  ParticipantFontSize 12
+  ParticipantFontStyle bold
+  ActorBackgroundColor #2E4057
+  ActorFontColor White
+  ActorBorderColor #1F6AA5
+  ArrowColor #1F6AA5
+  ArrowFontColor #2E4057
+  ArrowFontSize 11
+  LifeLineBorderColor #1F6AA5
+  LifeLineBackgroundColor #D1ECF1
+  GroupBackgroundColor #FFFBE6
+  GroupBorderColor #CC8800
+  NoteBackgroundColor #FFFBE6
+  NoteBorderColor #CC8800
+}
+
+title IntelliFly — Sequence: UC-07b Allocate Runway
+
+actor "Runway\nController" as User
+participant "CLI" as CLI
+participant "FlightManager" as FM
+participant "ChainedHashTable\n(flightIndex)" as CHT
+participant "flights\nvector<Flight>" as FV
+participant "runways\nvector<Runway>" as RV
+participant "undoStack\nstack<string>" as US
+
+User -> CLI : Select Runway Menu → Allocate
+activate CLI
+CLI -> User : Prompt "Flight Number:"
+User -> CLI : Enter flightNo
+
+CLI -> FM : allocateRunway(flightNo)
+activate FM
+
+FM -> CHT : find(flightNo)
+activate CHT
+CHT --> FM : int* pi
+deactivate CHT
+
+alt pi == nullptr (not found)
+  FM --> CLI : return {} (empty optional)
+  CLI -> User : "No runway available!" (flight not found)
+  deactivate FM
+  deactivate CLI
+else Found
+  FM -> FV : flights[*pi]
+  activate FV
+  FV --> FM : Flight& f
+  deactivate FV
+
+  alt f.valid == false (cancelled)
+    FM --> CLI : return {}
+    CLI -> User : "No runway available!" (invalid flight)
+    deactivate FM
+    deactivate CLI
+  else f.valid == true
+    FM -> RV : Iterate runways[0..2]
+    activate RV
+
+    loop for each Runway r
+
+      alt r.free == true (runway available)
+        FM -> RV : r.free = false
+        RV --> FM : done
+        deactivate RV
+
+        FM -> US : push("ALLOC " + r.id + " " + flightNo)
+        activate US
+        US --> FM : done
+        deactivate US
+
+        FM --> CLI : return optional<int>(r.id)
+        deactivate FM
+
+        CLI -> User : "Runway X allocated to flightNo"
+        deactivate CLI
+      else r.free == false
+        note right of RV : Continue to next runway
+      end
+    end
+
+    FM --> CLI : return {} (no free runway)
+    CLI -> User : "No runway available!"
+    deactivate FM
+    deactivate CLI
+  end
+end
+
+@enduml

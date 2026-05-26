@@ -1,0 +1,73 @@
+@startuml IntelliFly_Activity_CancelFlight
+
+skinparam backgroundColor #FAFCFF
+skinparam activity {
+  BackgroundColor #EBF2FA
+  BorderColor #1F6AA5
+  FontColor #1A1A2E
+  FontSize 12
+  DiamondBackgroundColor #FFF3CD
+  DiamondBorderColor #CC8800
+  StartColor #2E4057
+  EndColor   #2E4057
+}
+skinparam ArrowColor #1F6AA5
+skinparam swimlane {
+  BorderColor #2E4057
+  TitleFontColor #FFFFFF
+  TitleBackgroundColor #2E4057
+}
+
+|#D4EDDA| Airport Operator |
+|#D1ECF1| CLI |
+|#EBF2FA| FlightManager |
+|#FFF3CD| Data Structures |
+
+|Airport Operator|
+start
+:Select **Option 2 — Cancel Flight**;
+
+|CLI|
+:Read **flightNo** (string);
+:Trim whitespace;
+
+|FlightManager|
+:Call **flightIndex.find(flightNo)**;
+
+|Data Structures|
+:ChainedHashTable bucket search;
+
+|FlightManager|
+if (Flight found?) then (no)
+  |CLI|
+  #FF6B6B:Print "[ERROR] Flight not found!";
+  stop
+else (yes)
+  :Retrieve index **idx** from pointer;
+endif
+
+fork
+  |Data Structures|
+  :flights[idx].valid = **false**\n(soft delete — preserves vector indices);
+fork again
+  :ChainedHashTable.remove(flightNo);
+fork again
+  :OpenAddressingHash.remove(flightNo)\n(mark slot as DELETED);
+fork again
+  :AVL.remove(flights[idx].departure)\n(remove from schedule tree);
+end fork
+
+|FlightManager|
+:undoStack.push("CANCEL " + flightNo);
+note right
+  CANCEL is recorded but
+  NOT reversible by undo()
+  in current design.
+end note
+:return **true**;
+
+|CLI|
+#90EE90:Print "[SUCCESS] Flight cancelled!";
+stop
+
+@enduml

@@ -1,0 +1,110 @@
+@startuml IntelliFly_Activity_RoutePlanning
+
+skinparam backgroundColor #FAFCFF
+skinparam activity {
+  BackgroundColor #EBF2FA
+  BorderColor #1F6AA5
+  FontColor #1A1A2E
+  FontSize 12
+  DiamondBackgroundColor #FFF3CD
+  DiamondBorderColor #CC8800
+  StartColor #2E4057
+  EndColor   #2E4057
+  BarColor    #1F6AA5
+}
+skinparam ArrowColor #1F6AA5
+skinparam swimlane {
+  BorderColor #2E4057
+  TitleFontColor #FFFFFF
+  TitleBackgroundColor #2E4057
+}
+
+|#D4EDDA| Operator / Airline Staff |
+|#D1ECF1| CLI |
+|#EBF2FA| FlightManager |
+|#FFF3CD| Graph |
+
+|Operator / Airline Staff|
+start
+:Select **Option 8 — Route Planning**;
+
+|CLI|
+:Display sub-menu:\n1. Shortest Distances (Dijkstra)\n2. Minimum Spanning Tree (Kruskal);
+
+|Operator / Airline Staff|
+if (Choice?) then (1 — Dijkstra)
+  :Enter **airport code** (e.g. LHE);
+
+  |CLI|
+  :Trim & uppercase airport code;
+
+  |FlightManager|
+  :Call routeGraph.dijkstra(airport);
+
+  |Graph|
+  if (Source node in adj map?) then (no)
+    :Return empty map;
+    |CLI|
+    #FF6B6B:Print "No routes found!";
+    stop
+  else (yes)
+    :Initialize dist[src]=0\ndist[all others]=INF;
+    :Push (0, src) to min-priority_queue;
+
+    repeat
+      :Pop (d, u) from priority_queue;
+      if (d != dist[u]?) then (yes — stale)
+        :Skip (lazy deletion);
+      else (no — current)
+        :For each neighbor (v, w) of u:;
+        if (dist[u]+w < dist[v]?) then (yes)
+          :Update dist[v] = dist[u]+w;
+          :Push (dist[v], v) to PQ;
+        else (no)
+        endif
+      endif
+    repeat while (PQ not empty?) is (yes)
+    -> no;
+
+    :Filter entries where dist < 1e8;
+    :Return vector<pair<string,int>>;
+  endif
+
+  |FlightManager|
+  :Return distances;
+
+  |CLI|
+  :Print table:\nDestination | Distance (min);
+  stop
+
+else (2 — Kruskal MST)
+  |FlightManager|
+  :Call routeGraph.kruskalMST();
+
+  |Graph|
+  :Collect all edges into **all** vector;
+  :Build vertex → index map (Union-Find prep);
+  :Initialize parent[i] = i;
+
+  :Sort edges by weight (ascending);
+
+  repeat
+    :Take next edge (u, v, w);
+    :Find roots: pu = find(u), pv = find(v);
+    if (pu != pv ?) then (yes — different components)
+      :Union: parent[pu] = pv;
+      :Add edge to MST;
+    else (no — same component: skip)
+    endif
+  repeat while (More edges?) is (yes)
+  -> no;
+
+  :Return MST edges;
+
+  |CLI|
+  :Print MST edges table:\nFrom | To | Weight;
+  :Print total MST weight;
+  stop
+endif
+
+@enduml

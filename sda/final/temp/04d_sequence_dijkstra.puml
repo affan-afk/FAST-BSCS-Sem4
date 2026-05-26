@@ -1,0 +1,97 @@
+@startuml IntelliFly_Sequence_Dijkstra
+
+skinparam backgroundColor #FAFCFF
+skinparam sequence {
+  ParticipantBackgroundColor #EBF2FA
+  ParticipantBorderColor #1F6AA5
+  ParticipantFontColor #1A1A2E
+  ParticipantFontSize 12
+  ParticipantFontStyle bold
+  ActorBackgroundColor #2E4057
+  ActorFontColor White
+  ActorBorderColor #1F6AA5
+  ArrowColor #1F6AA5
+  ArrowFontColor #2E4057
+  ArrowFontSize 11
+  LifeLineBorderColor #1F6AA5
+  LifeLineBackgroundColor #D1ECF1
+  GroupBackgroundColor #FFFBE6
+  GroupBorderColor #CC8800
+  NoteBackgroundColor #FFFBE6
+  NoteBorderColor #CC8800
+}
+
+title IntelliFly — Sequence: UC-08a Shortest Path (Dijkstra)
+
+actor "Operator /\nAirline Staff" as User
+participant "CLI" as CLI
+participant "FlightManager" as FM
+participant "Graph\n(routeGraph)" as G
+participant "adj\nmap<string,vector>" as ADJ
+participant "MinPQ\npriority_queue" as PQ
+
+User -> CLI : Route Planning → Shortest Distances
+activate CLI
+CLI -> User : Prompt "Airport Code:"
+User -> CLI : Enter airport (e.g. "LHE")
+
+CLI -> CLI : trim() + toUpperCase()
+
+CLI -> FM : shortestFrom("LHE")
+activate FM
+
+FM -> G : dijkstra("LHE")
+activate G
+
+G -> ADJ : Check adj.count("LHE")
+activate ADJ
+ADJ --> G : true (node exists)
+deactivate ADJ
+
+G -> G : Initialize dist[all] = INF\ndist["LHE"] = 0
+
+G -> PQ : push({0, "LHE"})
+activate PQ
+
+loop while PQ not empty
+
+  G -> PQ : top() → (d, u)
+  PQ --> G : (d, u)
+  G -> PQ : pop()
+  PQ --> G : done
+
+  alt d != dist[u]  (stale entry)
+    G -> G : continue (skip)
+  else d == dist[u]  (current shortest)
+    G -> ADJ : adj[u] — get neighbors (v, w)
+    activate ADJ
+    ADJ --> G : vector<pair<string,int>>
+    deactivate ADJ
+
+    loop for each neighbor (v, w)
+      alt dist[u] + w < dist[v]
+        G -> G : dist[v] = dist[u] + w
+        G -> PQ : push({dist[v], v})
+        PQ --> G : done
+      end
+    end
+  end
+
+end
+
+deactivate PQ
+
+G --> FM : unordered_map<string,int> dist
+deactivate G
+
+FM -> FM : Filter entries where dist < 1e8
+
+FM --> CLI : vector<pair<string,int>> results
+deactivate FM
+
+CLI -> CLI : Sort results for display\n(optional alphabetical)
+
+CLI -> User : Print table:\n  Destination | Distance (min)
+deactivate CLI
+
+@enduml

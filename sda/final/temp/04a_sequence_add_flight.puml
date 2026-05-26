@@ -1,0 +1,136 @@
+@startuml IntelliFly_Sequence_AddFlight
+
+skinparam backgroundColor #FAFCFF
+skinparam sequence {
+  ParticipantBackgroundColor #EBF2FA
+  ParticipantBorderColor #1F6AA5
+  ParticipantFontColor #1A1A2E
+  ParticipantFontSize 12
+  ParticipantFontStyle bold
+  ActorBackgroundColor #2E4057
+  ActorFontColor White
+  ActorBorderColor #1F6AA5
+  ArrowColor #1F6AA5
+  ArrowFontColor #2E4057
+  ArrowFontSize 11
+  LifeLineBorderColor #1F6AA5
+  LifeLineBackgroundColor #D1ECF1
+  BoxBackgroundColor #F5F8FC
+  BoxBorderColor #2E4057
+  GroupBackgroundColor #FFFBE6
+  GroupBorderColor #CC8800
+  GroupFontColor #2E4057
+  DividerBackgroundColor #EBF2FA
+  DividerBorderColor #1F6AA5
+  NoteBackgroundColor #FFFBE6
+  NoteBorderColor #CC8800
+}
+
+title IntelliFly — Sequence: UC-01 Add Flight
+
+actor "Airport\nOperator" as User
+participant "CLI" as CLI
+participant "FlightManager" as FM
+participant "ChainedHashTable\n(flightIndex)" as CHT
+participant "OpenAddressingHash\n(flightIndexOA)" as OAH
+participant "AVL\n(scheduleAVL)" as AVL
+participant "BTree\n(btreeIndex)" as BT
+participant "IndexedMinHeap\n& lazyPQ" as HEAP
+participant "Trie\n(airportTrie)" as TRIE
+
+== User triggers Add Flight ==
+
+User -> CLI : Select Option 1\n(Add Flight)
+activate CLI
+
+CLI -> User : Prompt for flightNo
+User -> CLI : Enter flightNo, origin, dest,\ndepTime, arrTime, priority, desc
+
+CLI -> CLI : Validate all inputs\n(non-empty, HH:MM format, 1≤priority≤3)
+
+alt Validation Fails
+  CLI -> User : [ERROR] invalid input message
+  deactivate CLI
+else Validation Passes
+
+  CLI -> FM : addFlight(Flight f)
+  activate FM
+
+  == Duplicate Check ==
+
+  FM -> CHT : find(f.flightNo)
+  activate CHT
+  CHT --> FM : nullptr\n(not found)
+  deactivate CHT
+
+  alt Flight Already Exists
+    FM --> CLI : return false
+    CLI -> User : [ERROR] Flight already exists!
+  else New Flight
+
+    == Store in main vector ==
+
+    FM -> FM : flights.push_back(f)\nidx = flights.size()-1
+
+    == Update indices (parallel) ==
+
+    FM -> CHT : insert(flightNo, idx)
+    activate CHT
+    CHT -> CHT : hash(key) → bucket\nAppend (key, idx)
+    CHT --> FM : done
+    deactivate CHT
+
+    FM -> OAH : insert(flightNo, idx)
+    activate OAH
+    OAH -> OAH : Linear probe → slot\nslot.st = OCCUPIED
+    OAH --> FM : done
+    deactivate OAH
+
+    FM -> TRIE : insert(f.origin)
+    activate TRIE
+    TRIE -> TRIE : Walk/create prefix nodes
+    TRIE --> FM : done
+    deactivate TRIE
+
+    FM -> TRIE : insert(f.dest)
+    activate TRIE
+    TRIE --> FM : done
+    deactivate TRIE
+
+    FM -> AVL : insert(f.departure, flightNo)
+    activate AVL
+    AVL -> AVL : BST insert → rebalance()
+    AVL --> FM : done
+    deactivate AVL
+
+    FM -> BT : insert(flightNo, idx)
+    activate BT
+    BT -> BT : B-Tree insert\n(split if full)
+    BT --> FM : done
+    deactivate BT
+
+    == Scheduling Heaps ==
+
+    FM -> HEAP : indexedHeap.push(HeapItem{flightNo,priority,departure})
+    activate HEAP
+    HEAP -> HEAP : heap.push_back → siftUp()
+    HEAP --> FM : done
+    deactivate HEAP
+
+    FM -> HEAP : lazyPQ.push(HeapItem{...})
+    activate HEAP
+    HEAP --> FM : done
+    deactivate HEAP
+
+    == Undo registration ==
+
+    FM -> FM : undoStack.push("ADD " + flightNo)
+    FM --> CLI : return true
+    deactivate FM
+
+    CLI -> User : [SUCCESS] Flight flightNo added!
+    deactivate CLI
+  end
+end
+
+@enduml

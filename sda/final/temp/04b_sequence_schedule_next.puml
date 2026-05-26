@@ -1,0 +1,90 @@
+@startuml IntelliFly_Sequence_ScheduleNext
+
+skinparam backgroundColor #FAFCFF
+skinparam sequence {
+  ParticipantBackgroundColor #EBF2FA
+  ParticipantBorderColor #1F6AA5
+  ParticipantFontColor #1A1A2E
+  ParticipantFontSize 12
+  ParticipantFontStyle bold
+  ActorBackgroundColor #2E4057
+  ActorFontColor White
+  ActorBorderColor #1F6AA5
+  ArrowColor #1F6AA5
+  ArrowFontColor #2E4057
+  ArrowFontSize 11
+  LifeLineBorderColor #1F6AA5
+  LifeLineBackgroundColor #D1ECF1
+  GroupBackgroundColor #FFFBE6
+  GroupBorderColor #CC8800
+  NoteBackgroundColor #FFFBE6
+  NoteBorderColor #CC8800
+}
+
+title IntelliFly — Sequence: UC-13 Schedule Next Flight
+
+actor "Airline Staff\n/ Operator" as User
+participant "CLI" as CLI
+participant "FlightManager" as FM
+participant "lazyPQ\n(priority_queue)" as PQ
+participant "OpenAddressingHash\n(flightIndexOA)" as OAH
+participant "flights\nvector<Flight>" as FV
+
+User -> CLI : Trigger scheduleNext()\n(via demoScenario or direct call)
+activate CLI
+
+CLI -> FM : scheduleNext()
+activate FM
+
+note over FM, PQ
+  Lazy deletion strategy:
+  lazyPQ may contain stale entries
+  for cancelled flights — these are
+  skipped by validity check.
+end note
+
+loop while lazyPQ not empty
+
+  FM -> PQ : top()
+  activate PQ
+  PQ --> FM : HeapItem { flightNo, priority, time }
+  deactivate PQ
+
+  FM -> PQ : pop()
+  activate PQ
+  PQ --> FM : done
+  deactivate PQ
+
+  FM -> OAH : find(flightNo)
+  activate OAH
+  OAH -> OAH : Hash probe\n(linear scan if DELETED slots)
+  OAH --> FM : int* pi (or nullptr if cancelled)
+  deactivate OAH
+
+  alt pi == nullptr (flight was cancelled)
+    FM -> FM : skip (stale entry)
+    note right : Loop continues\nto next heap entry
+  else pi valid
+    FM -> FV : access flights[*pi]
+    activate FV
+    FV --> FM : Flight& f
+    deactivate FV
+
+    alt f.valid == true
+      FM --> CLI : return optional<Flight>(f)
+      CLI -> User : Display scheduled flight:\nflightNo, priority, departure
+      deactivate FM
+      deactivate CLI
+    else f.valid == false (stale)
+      FM -> FM : skip (soft-deleted)
+    end
+  end
+
+end
+
+FM --> CLI : return {} (empty optional)\n(no valid flights in heap)
+CLI -> User : "No scheduled flight"
+deactivate FM
+deactivate CLI
+
+@enduml

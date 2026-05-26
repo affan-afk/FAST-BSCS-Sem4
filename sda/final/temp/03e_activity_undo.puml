@@ -1,0 +1,94 @@
+@startuml IntelliFly_Activity_Undo
+
+skinparam backgroundColor #FAFCFF
+skinparam activity {
+  BackgroundColor #EBF2FA
+  BorderColor #1F6AA5
+  FontColor #1A1A2E
+  FontSize 12
+  DiamondBackgroundColor #FFF3CD
+  DiamondBorderColor #CC8800
+  StartColor #2E4057
+  EndColor   #2E4057
+  BarColor    #1F6AA5
+}
+skinparam ArrowColor #1F6AA5
+skinparam swimlane {
+  BorderColor #2E4057
+  TitleFontColor #FFFFFF
+  TitleBackgroundColor #2E4057
+}
+
+title IntelliFly — Activity: UC-12 Undo Last Action
+
+|#D4EDDA| Operator |
+|#D1ECF1| CLI |
+|#EBF2FA| FlightManager |
+|#FFF3CD| Data Structures |
+
+|Operator|
+start
+:Trigger undo()\n(programmatic or demo);
+
+|FlightManager|
+if (undoStack empty?) then (yes)
+  :return false;
+  |CLI|
+  :Print "Nothing to undo";
+  stop
+else (no)
+endif
+
+:Pop top action string\nfrom undoStack;
+
+:Parse action parts\n(split by whitespace);
+
+if (action == "ADD"?) then (yes)
+  |Data Structures|
+  :ChainedHashTable.find(flightNo);
+
+  if (Flight index found?) then (yes)
+    :flights[idx].valid = false;
+    :ChainedHashTable.remove(flightNo);
+    :OpenAddressingHash.remove(flightNo);
+    :AVL.remove(flights[idx].departure);
+  endif
+
+  |FlightManager|
+  :Print "Undo: removed flight X";
+  :return true;
+  stop
+
+else if (action == "ALLOC"?) then (yes)
+  |FlightManager|
+  :Extract runway ID from action;
+  :Call freeRunway(id);
+
+  |Data Structures|
+  :Find runway by id;
+  :runway.free = true;
+  :Push "FREE id" to undoStack;
+
+  |FlightManager|
+  :Print "Undo: freed runway X";
+  :return true;
+  stop
+
+else if (action == "CANCEL"?) then (yes)
+  |FlightManager|
+  :Print "Undo: CANCEL not reversible\nin current design";
+  :return true;
+  stop
+
+else if (action == "FREE"?) then (yes)
+  |FlightManager|
+  :Print "Undo: FREE not reversible\n(missing flight association)";
+  :return true;
+  stop
+
+else (unknown)
+  :return false;
+  stop
+endif
+
+@enduml

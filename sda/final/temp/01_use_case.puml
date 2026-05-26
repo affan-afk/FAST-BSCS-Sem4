@@ -1,0 +1,139 @@
+@startuml IntelliFly_UseCaseDiagram
+
+skinparam backgroundColor #FAFCFF
+skinparam actor {
+  BackgroundColor #2E4057
+  BorderColor #1F6AA5
+  FontColor White
+  FontSize 13
+  FontStyle bold
+}
+skinparam usecase {
+  BackgroundColor #EBF2FA
+  BorderColor #1F6AA5
+  FontColor #1A1A2E
+  FontSize 12
+  ArrowColor #1F6AA5
+}
+skinparam rectangle {
+  BackgroundColor #F5F8FC
+  BorderColor #2E4057
+  BorderThickness 2
+  FontColor #2E4057
+  FontStyle bold
+  FontSize 14
+}
+skinparam note {
+  BackgroundColor #FFFBE6
+  BorderColor #CCAA00
+}
+
+left to right direction
+
+actor "Airport\nOperator" as AO
+actor "Airline\nStaff"    as AS
+actor "System\n(Internal)" as SYS
+
+rectangle "IntelliFly Flight Scheduler System" {
+
+  ' ── Flight Management ───────────────────────────────────
+  package "Flight Management" {
+    usecase "UC-01\nAdd Flight"          as UC01
+    usecase "UC-02\nCancel Flight"       as UC02
+    usecase "UC-03\nView Flight Details" as UC03
+    usecase "UC-04\nList All Flights"    as UC04
+    usecase "UC-05\nList by Departure"   as UC05
+    usecase "UC-06\nList by Priority"    as UC06
+  }
+
+  ' ── Runway Management ───────────────────────────────────
+  package "Runway Management" {
+    usecase "UC-07\nManage Runways"      as UC07
+    usecase "UC-07a\nView Runway Status"   as UC07a
+    usecase "UC-07b\nAllocate Runway"      as UC07b
+    usecase "UC-07c\nFree Runway"          as UC07c
+  }
+
+  ' ── Route Planning ──────────────────────────────────────
+  package "Route Planning" {
+    usecase "UC-08\nRoute Planning"      as UC08
+    usecase "UC-08a\nShortest Path\n(Dijkstra)" as UC08a
+    usecase "UC-08b\nMinimum Spanning\nTree (Kruskal)" as UC08b
+  }
+
+  ' ── Search & Discovery ──────────────────────────────────
+  package "Search & Discovery" {
+    usecase "UC-09\nSearch Descriptions\n(KMP / BM / RK)" as UC09
+    usecase "UC-10\nAirport Autocomplete\n(Trie)" as UC10
+  }
+
+  ' ── System Operations ───────────────────────────────────
+  package "System Operations" {
+    usecase "UC-11\nRun Demo Scenario"   as UC11
+    usecase "UC-12\nUndo Last Action"    as UC12
+    usecase "UC-13\nSchedule Next\nFlight (Heap)" as UC13
+    usecase "UC-14\nLoad Sample Data"   as UC14
+  }
+
+  ' ── Validate Input (shared) ─────────────────────────────
+  usecase "<<utility>>\nValidate Input" as VLD
+
+}
+
+' ── Actor → Use Case associations ───────────────────────────────────────────
+AO --> UC01
+AO --> UC02
+AO --> UC03
+AO --> UC04
+AO --> UC05
+AO --> UC06
+AO --> UC07
+AO --> UC09
+AO --> UC10
+AO --> UC11
+AO --> UC12
+
+AS --> UC05
+AS --> UC06
+AS --> UC08
+AS --> UC13
+
+SYS --> UC11
+SYS --> UC14
+SYS --> UC13
+
+' ── Include / Extend relationships ──────────────────────────────────────────
+UC07 ..> UC07a : <<include>>
+UC07 ..> UC07b : <<include>>
+UC07 ..> UC07c : <<include>>
+
+UC08 ..> UC08a : <<include>>
+UC08 ..> UC08b : <<include>>
+
+UC01 ..> VLD   : <<include>>
+UC02 ..> UC03  : <<include>>
+UC07b ..> UC03 : <<include>>
+
+UC12 .> UC01  : <<extend>>
+UC12 .> UC07b : <<extend>>
+UC11 ..> UC01  : <<include>>
+UC11 ..> UC08  : <<include>>
+UC11 ..> UC07  : <<include>>
+UC11 ..> UC10  : <<include>>
+
+note right of UC09
+  Supports four algorithms:
+  • Brute Force
+  • KMP
+  • Rabin-Karp
+  • Boyer-Moore
+end note
+
+note right of UC12
+  Reversible:
+  ADD, ALLOC
+  Not reversible:
+  CANCEL, FREE
+end note
+
+@enduml
